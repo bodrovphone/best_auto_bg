@@ -1,13 +1,32 @@
 import Image from "next/image";
 import { PhoneIcon, ViberIcon, TelegramIcon } from "@/components/icons";
 
-const navLinks = [
-  { label: "Как работи", href: "#how-it-works" },
-  { label: "Последни лотове", href: "#offers" },
-  { label: "Калкулатор", href: "#calculator" },
-  { label: "Отзиви", href: "#testimonials" },
-  { label: "За нас", href: "/about" },
-];
+const tx = {
+  description: { bg: "Внос на автомобили директно от американски аукциони. Доставка, мито, ДДС и регистрация — всичко включено.", ru: "Импорт автомобилей напрямую с американских аукционов. Доставка, пошлина, НДС и регистрация — все включено." },
+  navHeader:   { bg: "Навигация",       ru: "Навигация" },
+  auctHeader:  { bg: "Аукциони",        ru: "Аукционы" },
+  contactHeader: { bg: "Контакти",      ru: "Контакты" },
+  howItWorks:  { bg: "Как работи",      ru: "Как это работает" },
+  lots:        { bg: "Последни лотове", ru: "Последние лоты" },
+  calculator:  { bg: "Калкулатор",      ru: "Калькулятор" },
+  reviews:     { bg: "Отзиви",          ru: "Отзывы" },
+  about:       { bg: "За нас",          ru: "О нас" },
+} as const;
+
+type TxKey = keyof typeof tx;
+function t(key: TxKey, lang: string): string {
+  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+}
+
+function getNavLinks(lang: string) {
+  return [
+    { label: t("howItWorks", lang), href: "#how-it-works" },
+    { label: t("lots", lang),       href: "#offers" },
+    { label: t("calculator", lang), href: "#calculator" },
+    { label: t("reviews", lang),    href: "#testimonials" },
+    { label: t("about", lang),      href: "/about" },
+  ];
+}
 
 const auctionLinks = [
   { label: "Copart", href: "https://www.copart.com", image: "/assets/images/copart_logo.jpg" },
@@ -17,6 +36,9 @@ const auctionLinks = [
 ];
 
 export function Footer({ lang = "bg" }: { lang?: string }) {
+  const prefix = `/${lang}`;
+  const navLinks = getNavLinks(lang);
+
   return (
     <footer className="border-t border-white/5 bg-gray-950">
       <div className="mx-auto max-w-7xl px-4 py-12 lg:py-16">
@@ -32,21 +54,20 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
               className="h-8 w-auto"
             />
             <p className="text-sm leading-relaxed text-gray-500">
-              Внос на автомобили директно от американски аукциони.
-              Доставка, мито, ДДС и регистрация — всичко включено.
+              {t("description", lang)}
             </p>
           </div>
 
           {/* Navigation */}
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
-              Навигация
+              {t("navHeader", lang)}
             </h4>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
                   <a
-                    href={link.href.startsWith("/") ? `/${lang}${link.href}` : link.href}
+                    href={link.href.startsWith("/") ? `${prefix}${link.href}` : link.href}
                     className="text-sm text-gray-400 transition-colors hover:text-white"
                   >
                     {link.label}
@@ -59,7 +80,7 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
           {/* Auctions */}
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
-              Аукциони
+              {t("auctHeader", lang)}
             </h4>
             <div className="grid grid-cols-2 gap-2">
               {auctionLinks.map((link) => (
@@ -85,7 +106,7 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
           {/* Contact */}
           <div>
             <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
-              Контакти
+              {t("contactHeader", lang)}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -125,7 +146,7 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
 
         {/* Bottom bar */}
         <div className="mt-12 border-t border-white/5 pt-8 text-center text-xs text-gray-600">
-          <p>&copy; {new Date().getFullYear()} „БЕСТ АВТО" ЕООД &middot; ЕИК 208075843</p>
+          <p>&copy; {new Date().getFullYear()} &bdquo;БЕСТ АВТО&ldquo; ЕООД &middot; ЕИК 208075843</p>
         </div>
       </div>
     </footer>

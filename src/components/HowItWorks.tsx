@@ -11,70 +11,106 @@ import {
 } from "@/components/icons";
 
 /* ------------------------------------------------------------------ */
+/*  Translations                                                       */
+/* ------------------------------------------------------------------ */
+
+const tx = {
+  badge:        { bg: "Как работи",     ru: "Как это работает" },
+  headingPre:   { bg: "От търсене до",  ru: "От поиска до" },
+  headingHL:    { bg: "вашата врата",    ru: "вашей двери" },
+  subtext:      { bg: "Пет стъпки. Един партньор. Ние се грижим за всичко.", ru: "Пять шагов. Один партнер. Мы позаботимся обо всем." },
+} as const;
+
+type TxKey = keyof typeof tx;
+function tr(key: TxKey, lang: string): string {
+  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
 interface Step {
   number: number;
-  title: string;
-  description: string;
-  duration: string;
-  bullets: string[];
+  title: { bg: string; ru: string };
+  description: { bg: string; ru: string };
+  duration: { bg: string; ru: string };
+  bullets: { bg: string; ru: string }[];
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   imageSrc?: string;
-  imageAlt: string;
+  imageAlt: { bg: string; ru: string };
 }
 
 const steps: Step[] = [
   {
     number: 1,
-    title: "Свържете се с нас",
-    description: "Разкажете ни какъв автомобил търсите — марка, модел, бюджет. Консултацията е напълно безплатна.",
-    duration: "Безплатна консултация",
-    bullets: ["Обсъждаме бюджет и желания", "Показваме примери от текущи аукциони", "Договаряме условия без скрити такси"],
+    title:       { bg: "Свържете се с нас",   ru: "Свяжитесь с нами" },
+    description: { bg: "Разкажете ни какъв автомобил търсите — марка, модел, бюджет. Консултацията е напълно безплатна.", ru: "Расскажите, какой автомобиль ищете — марка, модель, бюджет. Консультация полностью бесплатна." },
+    duration:    { bg: "Безплатна консултация", ru: "Бесплатная консультация" },
+    bullets: [
+      { bg: "Обсъждаме бюджет и желания",           ru: "Обсуждаем бюджет и пожелания" },
+      { bg: "Показваме примери от текущи аукциони",  ru: "Показываем примеры с текущих аукционов" },
+      { bg: "Договаряме условия без скрити такси",   ru: "Согласовываем условия без скрытых комиссий" },
+    ],
     icon: PhoneIcon,
     imageSrc: "/assets/images/pexels-pixabay-164634.jpg",
-    imageAlt: "Свържете се с нас",
+    imageAlt: { bg: "Свържете се с нас", ru: "Свяжитесь с нами" },
   },
   {
     number: 2,
-    title: "Наддаваме и печелим",
-    description: "Участваме в търга от ваше име на Copart, IAAI или Manheim с предварително договорен таван.",
-    duration: "В деня на търга",
-    bullets: ["Следим наддаването в реално време", "Работим само с договорен лимит", "Незабавно уведомление при спечелване"],
+    title:       { bg: "Наддаваме и печелим",  ru: "Делаем ставку и выигрываем" },
+    description: { bg: "Участваме в търга от ваше име на Copart, IAAI или Manheim с предварително договорен таван.", ru: "Участвуем в торгах от вашего имени на Copart, IAAI или Manheim с заранее согласованным лимитом." },
+    duration:    { bg: "В деня на търга", ru: "В день торгов" },
+    bullets: [
+      { bg: "Следим наддаването в реално време",      ru: "Следим за торгами в реальном времени" },
+      { bg: "Работим само с договорен лимит",          ru: "Работаем только в рамках согласованного лимита" },
+      { bg: "Незабавно уведомление при спечелване",    ru: "Мгновенное уведомление при выигрыше" },
+    ],
     icon: GavelIcon,
     imageSrc: "/assets/images/pexels-shkrabaanthony-7144199.jpg",
-    imageAlt: "Наддаване и покупка",
+    imageAlt: { bg: "Наддаване и покупка", ru: "Ставка и покупка" },
   },
   {
     number: 3,
-    title: "Доставка от САЩ",
-    description: "Организираме RoRo морски транспорт директно от американското пристанище до Варна или Бургас.",
-    duration: "5–7 седмици",
-    bullets: ["RoRo товарен транспорт", "Онлайн проследяване на пратката", "Застраховка по време на транзит"],
+    title:       { bg: "Доставка от САЩ",      ru: "Доставка из США" },
+    description: { bg: "Организираме RoRo морски транспорт директно от американското пристанище до Варна или Бургас.", ru: "Организуем морскую перевозку RoRo напрямую из американского порта в Варну или Бургас." },
+    duration:    { bg: "5–7 седмици", ru: "5–7 недель" },
+    bullets: [
+      { bg: "RoRo товарен транспорт",               ru: "Грузовая перевозка RoRo" },
+      { bg: "Онлайн проследяване на пратката",      ru: "Онлайн-отслеживание груза" },
+      { bg: "Застраховка по време на транзит",       ru: "Страховка на время транзита" },
+    ],
     icon: TruckIcon,
     imageSrc: "/assets/images/shipping2.jpg",
-    imageAlt: "Доставка от САЩ",
+    imageAlt: { bg: "Доставка от САЩ", ru: "Доставка из США" },
   },
   {
     number: 4,
-    title: "Митница и регистрация",
-    description: "Обработваме цялата митническа документация, заплащаме мито и ДДС, регистрираме в КАТ.",
-    duration: "1–2 седмици",
-    bullets: ["Мито и ДДС изцяло от ваше име", "Пълна митническа документация", "Регистрация и табели в КАТ"],
+    title:       { bg: "Митница и регистрация",   ru: "Таможня и регистрация" },
+    description: { bg: "Обработваме цялата митническа документация, заплащаме мито и ДДС, регистрираме в КАТ.", ru: "Оформляем всю таможенную документацию, оплачиваем пошлину и НДС, регистрируем в КАТ." },
+    duration:    { bg: "1–2 седмици", ru: "1–2 недели" },
+    bullets: [
+      { bg: "Мито и ДДС изцяло от ваше име",       ru: "Пошлина и НДС полностью от вашего имени" },
+      { bg: "Пълна митническа документация",        ru: "Полная таможенная документация" },
+      { bg: "Регистрация и табели в КАТ",           ru: "Регистрация и номера в КАТ" },
+    ],
     icon: FileTextIcon,
     imageSrc: "/assets/images/pexels-redyar-rzgar-1257188192-33889800.jpg",
-    imageAlt: "Митница и регистрация",
+    imageAlt: { bg: "Митница и регистрация", ru: "Таможня и регистрация" },
   },
   {
     number: 5,
-    title: "Колата е ваша!",
-    description: "Доставяме готовия автомобил до вашия адрес в цяла България — с всички документи на ръка.",
-    duration: "Доставка до адрес",
-    bullets: ["Доставка в цяла България", "Пълен комплект документи", "Готов за шофиране от деня на получаване"],
+    title:       { bg: "Колата е ваша!",           ru: "Автомобиль ваш!" },
+    description: { bg: "Доставяме готовия автомобил до вашия адрес в цяла България — с всички документи на ръка.", ru: "Доставляем готовый автомобиль по вашему адресу в любую точку Болгарии — со всеми документами на руках." },
+    duration:    { bg: "Доставка до адрес", ru: "Доставка до адреса" },
+    bullets: [
+      { bg: "Доставка в цяла България",                      ru: "Доставка по всей Болгарии" },
+      { bg: "Пълен комплект документи",                      ru: "Полный комплект документов" },
+      { bg: "Готов за шофиране от деня на получаване",       ru: "Готов к езде с момента получения" },
+    ],
     icon: PackageIcon,
     imageSrc: "/assets/images/pexels-gustavo-fring-4895449.jpg",
-    imageAlt: "Доставка до вас",
+    imageAlt: { bg: "Доставка до вас", ru: "Доставка к вам" },
   },
 ];
 
@@ -149,10 +185,18 @@ function findFractionOnPath(path: SVGPathElement, cx: number, cy: number): numbe
 }
 
 /* ------------------------------------------------------------------ */
+/*  Localized text helper                                              */
+/* ------------------------------------------------------------------ */
+
+function loc(obj: { bg: string; ru: string }, lang: string): string {
+  return obj[lang as "bg" | "ru"] ?? obj.bg;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Component                                                          */
 /* ------------------------------------------------------------------ */
 
-export function HowItWorks() {
+export function HowItWorks({ lang = "bg" }: { lang?: string }) {
   const sectionRef = useRef<HTMLElement>(null);
   const desktopPathRef = useRef<SVGPathElement>(null);
   const mobilePathRef = useRef<SVGPathElement>(null);
@@ -276,8 +320,6 @@ export function HowItWorks() {
 
   const CAR_W = 55;
   const CAR_H = 27;
-  const CAR_W_MOBILE = 28;
-  const CAR_H_MOBILE = 14;
 
   return (
     <section
@@ -325,14 +367,14 @@ export function HowItWorks() {
         {/* Header */}
         <div className="mb-16 lg:mb-24 text-center">
           <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#E1E100" }}>
-            Как работи
+            {tr("badge", lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
-            От търсене до{" "}
-            <span className="italic" style={{ color: "#E1E100" }}>вашата врата</span>
+            {tr("headingPre", lang)}{" "}
+            <span className="italic" style={{ color: "#E1E100" }}>{tr("headingHL", lang)}</span>
           </h2>
           <p className="mt-5 text-gray-400 max-w-xl mx-auto text-base lg:text-lg leading-relaxed">
-            Пет стъпки. Един партньор. Ние се грижим за всичко.
+            {tr("subtext", lang)}
           </p>
         </div>
 
@@ -397,7 +439,7 @@ export function HowItWorks() {
                   {/* Image */}
                   {step.imageSrc ? (
                     <div className="w-full h-[160px] relative overflow-hidden">
-                      <Image src={step.imageSrc} alt={step.imageAlt} fill className="object-cover" sizes="380px" />
+                      <Image src={step.imageSrc} alt={loc(step.imageAlt, lang)} fill className="object-cover" sizes="380px" />
                       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(20,30,30,0.9) 100%)" }} />
                     </div>
                   ) : (
@@ -409,21 +451,21 @@ export function HowItWorks() {
                   <div className="px-5 py-5">
                     <div className="flex items-center gap-2.5 mb-2">
                       <step.icon className="w-5 h-5 shrink-0" style={{ color: "#E1E100" }} />
-                      <h3 className="text-white font-semibold text-base">{step.title}</h3>
+                      <h3 className="text-white font-semibold text-base">{loc(step.title, lang)}</h3>
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{step.description}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed mb-4">{loc(step.description, lang)}</p>
                     <ul className="space-y-1.5">
-                      {step.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-xs text-gray-400">
+                      {step.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-xs text-gray-400">
                           <span className="mt-0.5 shrink-0 w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(225,225,0,0.12)" }}>
                             <span style={{ width: 5, height: 5, borderRadius: "50%", backgroundColor: "#E1E100", display: "block" }} />
                           </span>
-                          {b}
+                          {loc(b, lang)}
                         </li>
                       ))}
                     </ul>
                     <div className="mt-4 pt-3 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                      <span className="text-xs font-medium" style={{ color: "#E1E100", opacity: 0.7 }}>{step.duration}</span>
+                      <span className="text-xs font-medium" style={{ color: "#E1E100", opacity: 0.7 }}>{loc(step.duration, lang)}</span>
                     </div>
                   </div>
                 </div>
@@ -476,7 +518,7 @@ export function HowItWorks() {
                 <div className="step-card rounded-xl border overflow-hidden flex-1" style={{ backgroundColor: "rgba(20, 30, 30, 0.85)", borderColor: "rgba(255,255,255,0.06)" }}>
                   {step.imageSrc ? (
                     <div className="w-full h-[130px] relative overflow-hidden">
-                      <Image src={step.imageSrc} alt={step.imageAlt} fill className="object-cover" sizes="(max-width: 1024px) 80vw, 400px" />
+                      <Image src={step.imageSrc} alt={loc(step.imageAlt, lang)} fill className="object-cover" sizes="(max-width: 1024px) 80vw, 400px" />
                       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, transparent 50%, rgba(20,30,30,0.9) 100%)" }} />
                     </div>
                   ) : (
@@ -487,21 +529,21 @@ export function HowItWorks() {
                   <div className="px-4 py-4">
                     <div className="flex items-center gap-2 mb-2">
                       <step.icon className="w-4 h-4 shrink-0" style={{ color: "#E1E100" }} />
-                      <h3 className="text-white font-semibold text-sm">{step.title}</h3>
+                      <h3 className="text-white font-semibold text-sm">{loc(step.title, lang)}</h3>
                     </div>
-                    <p className="text-gray-400 text-xs leading-relaxed mb-3">{step.description}</p>
+                    <p className="text-gray-400 text-xs leading-relaxed mb-3">{loc(step.description, lang)}</p>
                     <ul className="space-y-1.5">
-                      {step.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2 text-xs text-gray-500">
+                      {step.bullets.map((b, bi) => (
+                        <li key={bi} className="flex items-start gap-2 text-xs text-gray-500">
                           <span className="mt-0.5 shrink-0 w-3 h-3 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(225,225,0,0.1)" }}>
                             <span style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#E1E100", display: "block" }} />
                           </span>
-                          {b}
+                          {loc(b, lang)}
                         </li>
                       ))}
                     </ul>
                     <div className="mt-3 pt-2.5 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                      <span className="text-xs font-medium" style={{ color: "#E1E100", opacity: 0.7 }}>{step.duration}</span>
+                      <span className="text-xs font-medium" style={{ color: "#E1E100", opacity: 0.7 }}>{loc(step.duration, lang)}</span>
                     </div>
                   </div>
                 </div>

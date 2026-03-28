@@ -1,28 +1,49 @@
 import Image from "next/image";
 
-const titleTypeLabels: Record<string, string> = {
-  "CLEAN TITLE": "Чист документ",
-  "SALVAGE TITLE": "Тотална щета",
-  "REBUILT TITLE": "Възстановен",
+const titleTypeLabels: Record<string, { bg: string; ru: string }> = {
+  "CLEAN TITLE":   { bg: "Чист документ",  ru: "Чистый документ" },
+  "SALVAGE TITLE": { bg: "Тотална щета",   ru: "Тотальный ущерб" },
+  "REBUILT TITLE":  { bg: "Възстановен",    ru: "Восстановлен" },
 };
 
-const damageLabels: Record<string, string> = {
-  "MINOR DENT/SCRATCHES": "Малки вдлъбнатини",
-  "NORMAL WEAR": "Нормално износване",
-  "FRONT END": "Предна部分",
-  "REAR END": "Задна част",
-  "ALL OVER": "Цялостни щети",
-  "HAIL": "Градушка",
-  "WATER/FLOOD": "Вода/наводнение",
-  "MECHANICAL": "Механична повреда",
+const damageLabels: Record<string, { bg: string; ru: string }> = {
+  "MINOR DENT/SCRATCHES": { bg: "Малки вдлъбнатини",    ru: "Небольшие вмятины" },
+  "NORMAL WEAR":          { bg: "Нормално износване",   ru: "Нормальный износ" },
+  "FRONT END":            { bg: "Предна част",          ru: "Передняя часть" },
+  "REAR END":             { bg: "Задна част",           ru: "Задняя часть" },
+  "ALL OVER":             { bg: "Цялостни щети",        ru: "Повреждения повсюду" },
+  "HAIL":                 { bg: "Градушка",             ru: "Град" },
+  "WATER/FLOOD":          { bg: "Вода/наводнение",      ru: "Вода/затопление" },
+  "MECHANICAL":           { bg: "Механична повреда",    ru: "Механическое повреждение" },
 };
 
-function translateDamage(raw: string): string {
-  return damageLabels[raw] ?? raw;
+const tx = {
+  badge:       { bg: "Copart Аукцион",     ru: "Аукцион Copart" },
+  heading:     { bg: "Последни Лотове",    ru: "Последние лоты" },
+  subtext:     { bg: "Реални лотове, спечелени и внасяни в момента. Свържете се с нас за детайли.", ru: "Реальные лоты, выигранные и импортируемые прямо сейчас. Свяжитесь с нами для подробностей." },
+  viewAll:     { bg: "Виж всички",         ru: "Смотреть все" },
+  auction:     { bg: "Търг:",              ru: "Торги:" },
+  damage:      { bg: "Щета:",             ru: "Ущерб:" },
+  expectedBid: { bg: "Очакван търг",      ru: "Ожидаемая ставка" },
+  priceBG:     { bg: "~цена в БГ",        ru: "~цена в БГ" },
+  disclaimer:  { bg: `* Приблизителни цени. „Очакван търг“ е оценка базирана на исторически данни. „~цена в БГ“ включва доставка, мито и ДДС.`, ru: `* Приблизительные цены. „Ожидаемая ставка“ основана на исторических данных. „~цена в БГ“ включает доставку, пошлину и НДС.` },
+} as const;
+
+type TxKey = keyof typeof tx;
+function t(key: TxKey, lang: string): string {
+  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
 }
 
-function translateTitleType(raw: string): string {
-  return titleTypeLabels[raw] ?? raw;
+function translateDamage(raw: string, lang: string): string {
+  const entry = damageLabels[raw];
+  if (!entry) return raw;
+  return entry[lang as "bg" | "ru"] ?? entry.bg;
+}
+
+function translateTitleType(raw: string, lang: string): string {
+  const entry = titleTypeLabels[raw];
+  if (!entry) return raw;
+  return entry[lang as "bg" | "ru"] ?? entry.bg;
 }
 
 /** Returns a date string YYYY-MM-DD that is `days` days from today */
@@ -71,15 +92,15 @@ function calcBgPrice(auctionUsd: number, shipping: number): number {
 }
 
 function formatUsd(v: number) { return `$${v.toLocaleString("en-US")}`; }
-function formatEur(v: number) { return `€${v.toLocaleString("bg-BG")}`; }
-function formatKm(miles: number) { return `${Math.round(miles * 1.60934).toLocaleString("bg-BG")} км`; }
+function formatEur(v: number) { return `\u20AC${v.toLocaleString("bg-BG")}`; }
+function formatKm(miles: number) { return `${Math.round(miles * 1.60934).toLocaleString("bg-BG")} \u043A\u043C`; }
 
 function formatSaleDate(dateStr: string): string {
   const [, month, day] = dateStr.split("-");
   return `${day}.${month}`;
 }
 
-function LotCard({ lot }: { lot: Lot & { saleDate: string } }) {
+function LotCard({ lot, lang }: { lot: Lot & { saleDate: string }; lang: string }) {
   const isClean = lot.titleType === "CLEAN TITLE";
   const bgPrice = calcBgPrice(lot.auctionBudget, lot.shipping);
 
@@ -100,12 +121,12 @@ function LotCard({ lot }: { lot: Lot & { saleDate: string } }) {
         />
         <div className="absolute top-2.5 left-2.5">
           <span className={`text-[10px] font-bold px-2 py-0.5 rounded ${isClean ? "bg-emerald-500/90 text-white" : "bg-orange-500/90 text-white"}`}>
-            {translateTitleType(lot.titleType)}
+            {translateTitleType(lot.titleType, lang)}
           </span>
         </div>
         <div className="absolute top-2.5 right-2.5">
           <span className="text-[10px] font-semibold bg-black/70 text-gray-300 px-2 py-0.5 rounded">
-            Търг: {formatSaleDate(lot.saleDate)}
+            {t("auction", lang)} {formatSaleDate(lot.saleDate)}
           </span>
         </div>
       </div>
@@ -132,16 +153,16 @@ function LotCard({ lot }: { lot: Lot & { saleDate: string } }) {
         </div>
 
         <p className="text-xs text-gray-500 truncate">
-          Щета: {translateDamage(lot.primaryDamage)}
+          {t("damage", lang)} {translateDamage(lot.primaryDamage, lang)}
         </p>
 
         <div className="mt-auto pt-2 border-t border-gray-700/40 flex items-end justify-between gap-2">
           <div>
-            <p className="text-[10px] text-gray-500 uppercase tracking-wide">Очакван търг</p>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">{t("expectedBid", lang)}</p>
             <p className="text-base font-black text-customYellow leading-tight">~{formatUsd(lot.auctionBudget)}</p>
           </div>
           <div className="text-right">
-            <p className="text-[10px] text-gray-500 uppercase tracking-wide">~цена в БГ</p>
+            <p className="text-[10px] text-gray-500 uppercase tracking-wide">{t("priceBG", lang)}</p>
             <p className="text-sm font-semibold text-emerald-400 leading-tight">~{formatEur(bgPrice)}</p>
           </div>
         </div>
@@ -150,7 +171,7 @@ function LotCard({ lot }: { lot: Lot & { saleDate: string } }) {
   );
 }
 
-export function OffersSection() {
+export function OffersSection({ lang = "bg" }: { lang?: string }) {
   const lotsWithDates = lots.map((lot) => ({
     ...lot,
     saleDate: daysFromToday(lot.daysAhead),
@@ -162,13 +183,13 @@ export function OffersSection() {
         <div className="mb-10 flex flex-col items-center text-center gap-3 sm:flex-row sm:justify-between sm:text-left">
           <div>
             <span className="text-sm font-semibold uppercase tracking-widest text-customYellow">
-              Copart Аукцион
+              {t("badge", lang)}
             </span>
             <h2 className="mt-1 text-2xl font-bold text-white lg:text-3xl">
-              Последни Лотове
+              {t("heading", lang)}
             </h2>
             <p className="mt-1 max-w-md text-sm text-gray-400">
-              Реални лотове, спечелени и внасяни в момента. Свържете се с нас за детайли.
+              {t("subtext", lang)}
             </p>
           </div>
           <a
@@ -177,7 +198,7 @@ export function OffersSection() {
             rel="noopener noreferrer"
             className="shrink-0 inline-flex items-center gap-1.5 rounded-full border border-gray-600 px-4 py-2 text-sm text-gray-300 transition-colors hover:border-customYellow hover:text-customYellow"
           >
-            Виж всички
+            {t("viewAll", lang)}
             <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
@@ -186,12 +207,12 @@ export function OffersSection() {
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {lotsWithDates.map((lot) => (
-            <LotCard key={lot.lotId} lot={lot} />
+            <LotCard key={lot.lotId} lot={lot} lang={lang} />
           ))}
         </div>
 
         <p className="mt-6 text-center text-xs text-gray-600">
-          * Приблизителни цени. „Очакван търг" е оценка базирана на исторически данни. „~цена в БГ" включва доставка, мито и ДДС.
+          {t("disclaimer", lang)}
         </p>
       </div>
     </section>

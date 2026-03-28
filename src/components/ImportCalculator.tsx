@@ -20,33 +20,55 @@ interface CalculationResult {
   savingsPercent: number;
 }
 
-const carTypeOptions: { value: CarType; label: string }[] = [
-  { value: "sedan", label: "Седан" },
-  { value: "suv", label: "SUV" },
-  { value: "truck", label: "Пикап" },
-];
+const tx = {
+  badge:          { bg: "Калкулатор",                          ru: "Калькулятор" },
+  heading1:       { bg: "Изчислете цената на",                 ru: "Рассчитайте стоимость" },
+  headingHL:      { bg: "вашия внос",                          ru: "вашего импорта" },
+  description:    { bg: "Въведете данните за автомобила и вижте приблизителна цена с включени всички разходи — доставка, мито, ДДС и регистрация.", ru: "Введите данные автомобиля и узнайте приблизительную стоимость со всеми расходами — доставка, пошлина, НДС и регистрация." },
+  benefit1:       { bg: "Прозрачни цени без скрити такси",     ru: "Прозрачные цены без скрытых комиссий" },
+  benefit2:       { bg: "Включена доставка от САЩ",            ru: "Доставка из США включена" },
+  benefit3:       { bg: "Митническо оформяне и ДДС",          ru: "Таможенное оформление и НДС" },
+  benefit4:       { bg: "Регистрация в КАТ",                   ru: "Регистрация в КАТ" },
+  priceLabel:     { bg: "Цена на колата (USD)",                ru: "Цена автомобиля (USD)" },
+  placeholder:    { bg: "напр. 15000",                         ru: "напр. 15000" },
+  carTypeLabel:   { bg: "Тип кола",                            ru: "Тип автомобиля" },
+  sedan:          { bg: "Седан",                               ru: "Седан" },
+  suv:            { bg: "SUV",                                 ru: "SUV" },
+  truck:          { bg: "Пикап",                               ru: "Пикап" },
+  engineLabel:    { bg: "Тип двигател",                        ru: "Тип двигателя" },
+  petrol:         { bg: "Бензин",                              ru: "Бензин" },
+  diesel:         { bg: "Дизел",                               ru: "Дизель" },
+  electric:       { bg: "Електрически",                        ru: "Электрический" },
+  hybrid:         { bg: "Хибрид",                              ru: "Гибрид" },
+  yearLabel:      { bg: "Година на производство",              ru: "Год выпуска" },
+  calcBtn:        { bg: "Изчисли цената",                      ru: "Рассчитать стоимость" },
+  resCarPrice:    { bg: "Цена на колата",                      ru: "Цена автомобиля" },
+  resAuction:     { bg: "Аукционни такси (~10% + fees)",       ru: "Аукционные сборы (~10% + fees)" },
+  resShipping:    { bg: "Транспорт САЩ → България",            ru: "Транспорт США → Болгария" },
+  resCustoms:     { bg: "Мито (10% от CIF)",                   ru: "Пошлина (10% от CIF)" },
+  resEco:         { bg: "Еко такса",                           ru: "Эко налог" },
+  resVat:         { bg: "ДДС (20%)",                           ru: "НДС (20%)" },
+  resReg:         { bg: "Регистрация + преглед",               ru: "Регистрация + осмотр" },
+  resTotal:       { bg: "Обща цена",                           ru: "Общая стоимость" },
+  savingsWith:    { bg: "Спестявате с Best Auto",              ru: "Экономия с Best Auto" },
+  bgMarketPrice:  { bg: "Цена в БГ пазар",                    ru: "Цена на рынке БГ" },
+  withBestAuto:   { bg: "С Best Auto",                         ru: "С Best Auto" },
+  saved:          { bg: "спестени",                            ru: "экономия" },
+  disclaimer:     { bg: "* Цените са приблизителни. Сравнението е базирано на средни цени от mobile.bg и auto.bg за аналогичен автомобил.", ru: "* Цены приблизительные. Сравнение основано на средних ценах с mobile.bg и auto.bg для аналогичного автомобиля." },
+} as const;
 
-const engineTypeOptions: { value: EngineType; label: string }[] = [
-  { value: "petrol", label: "Бензин" },
-  { value: "diesel", label: "Дизел" },
-  { value: "electric", label: "Електрически" },
-  { value: "hybrid", label: "Хибрид" },
-];
+type TxKey = keyof typeof tx;
+function t(key: TxKey, lang: string): string {
+  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+}
 
 const yearOptions = Array.from({ length: 15 }, (_, i) => {
   const y = 2026 - i;
   return { value: String(y), label: String(y) };
 });
 
-const benefits = [
-  "Прозрачни цени без скрити такси",
-  "Включена доставка от САЩ",
-  "Митническо оформяне и ДДС",
-  "Регистрация в КАТ",
-];
-
 function formatEur(value: number): string {
-  return `€${value.toLocaleString("bg-BG", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+  return `\u20AC${value.toLocaleString("bg-BG", { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 }
 
 function calculate(
@@ -55,51 +77,31 @@ function calculate(
   engine: EngineType,
   year: number
 ): CalculationResult {
-  // USD to EUR conversion
   const eurRate = 0.92;
   const eurPrice = Math.round(carPrice * eurRate);
-
-  // Auction buyer premium (~10%) + fixed fees (~$350 → EUR)
   const auctionFees = Math.round(carPrice * 0.10 * eurRate + 320);
-
-  // Shipping: RoRo from USA to Varna/Burgas (real market rates 2025)
   const shippingCost =
     carType === "suv" ? 2400 : carType === "truck" ? 2800 : 2100;
-
-  // CIF value = car price + shipping + insurance (~1.5% of car value)
   const insurance = Math.round(eurPrice * 0.015);
   const cifValue = eurPrice + shippingCost + insurance;
-
-  // Customs duty: 10% of CIF value (EU tariff code 8703 for passenger vehicles)
   const customsDuty = Math.round(cifValue * 0.10);
-
-  // Eco tax: based on Euro emission standard (approximated by year)
-  // Newer cars (Euro 6) ~€95, older cars up to €250
   const yearsOld = Math.max(0, 2026 - year);
   let ecoTax: number;
   if (engine === "electric") {
     ecoTax = 0;
   } else if (yearsOld <= 3) {
-    ecoTax = 95; // Euro 6d
+    ecoTax = 95;
   } else if (yearsOld <= 6) {
-    ecoTax = 150; // Euro 6
+    ecoTax = 150;
   } else if (yearsOld <= 10) {
-    ecoTax = 200; // Euro 5
+    ecoTax = 200;
   } else {
-    ecoTax = 250; // Euro 4 or older
+    ecoTax = 250;
   }
-
-  // VAT: 20% of (CIF + customs duty)
   const vatBase = cifValue + customsDuty;
   const vat = Math.round(vatBase * 0.20);
-
-  // Registration in KAT + technical inspection
   const registration = 200;
-
   const total = eurPrice + auctionFees + shippingCost + customsDuty + ecoTax + vat + registration;
-
-  // Bulgarian market comparison: dealers import + add 35-50% margin
-  // Newer/premium cars have higher markup, older cars less
   const ageMarkup = yearsOld <= 3 ? 0.50 : yearsOld <= 6 ? 0.45 : 0.38;
   const bgMarketPrice = Math.round(total * (1 + ageMarkup));
   const savings = bgMarketPrice - total;
@@ -142,13 +144,33 @@ function SelectField({
   );
 }
 
-export function ImportCalculator() {
+export function ImportCalculator({ lang = "bg" }: { lang?: string }) {
   const [carPrice, setCarPrice] = useState("");
   const [carType, setCarType] = useState<CarType>("sedan");
   const [engine, setEngine] = useState<EngineType>("petrol");
   const [year, setYear] = useState("2022");
   const [result, setResult] = useState<CalculationResult | null>(null);
   const [showResult, setShowResult] = useState(false);
+
+  const carTypeOptions = [
+    { value: "sedan", label: t("sedan", lang) },
+    { value: "suv",   label: t("suv", lang) },
+    { value: "truck", label: t("truck", lang) },
+  ];
+
+  const engineTypeOptions = [
+    { value: "petrol",   label: t("petrol", lang) },
+    { value: "diesel",   label: t("diesel", lang) },
+    { value: "electric", label: t("electric", lang) },
+    { value: "hybrid",   label: t("hybrid", lang) },
+  ];
+
+  const benefits = [
+    t("benefit1", lang),
+    t("benefit2", lang),
+    t("benefit3", lang),
+    t("benefit4", lang),
+  ];
 
   function handleCalculate() {
     const price = parseFloat(carPrice);
@@ -157,7 +179,6 @@ export function ImportCalculator() {
 
     const calc = calculate(price, carType, engine, yr);
     setResult(calc);
-    // Trigger animation by toggling
     setShowResult(false);
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -177,17 +198,16 @@ export function ImportCalculator() {
           {/* Left Column — Info */}
           <div className="flex flex-col justify-center">
             <span className="text-sm font-semibold uppercase tracking-widest text-customYellow">
-              Калкулатор
+              {t("badge", lang)}
             </span>
 
             <h2 className="mt-4 text-3xl font-bold leading-tight text-white lg:text-4xl">
-              Изчислете цената на{" "}
-              <span className="italic text-customYellow">вашия внос</span>
+              {t("heading1", lang)}{" "}
+              <span className="italic text-customYellow">{t("headingHL", lang)}</span>
             </h2>
 
             <p className="mt-4 max-w-md text-base leading-relaxed text-gray-400">
-              Въведете данните за автомобила и вижте приблизителна цена с включени
-              всички разходи — доставка, мито, ДДС и регистрация.
+              {t("description", lang)}
             </p>
 
             <ul className="mt-8 space-y-4">
@@ -212,11 +232,11 @@ export function ImportCalculator() {
               {/* Car Price */}
               <div>
                 <label className="mb-1.5 block text-sm font-medium text-gray-300">
-                  Цена на колата (USD)
+                  {t("priceLabel", lang)}
                 </label>
                 <input
                   type="number"
-                  placeholder="напр. 15000"
+                  placeholder={t("placeholder", lang)}
                   value={carPrice}
                   onChange={(e) => setCarPrice(e.target.value)}
                   className="w-full rounded-xl border border-gray-700 bg-gray-800/50 px-4 py-3 text-white outline-none transition-colors placeholder:text-gray-500 focus:border-customYellow focus:ring-1 focus:ring-customYellow/50"
@@ -225,7 +245,7 @@ export function ImportCalculator() {
 
               {/* Car Type */}
               <SelectField
-                label="Тип кола"
+                label={t("carTypeLabel", lang)}
                 value={carType}
                 onChange={(v) => setCarType(v as CarType)}
                 options={carTypeOptions}
@@ -233,7 +253,7 @@ export function ImportCalculator() {
 
               {/* Engine Type */}
               <SelectField
-                label="Тип двигател"
+                label={t("engineLabel", lang)}
                 value={engine}
                 onChange={(v) => setEngine(v as EngineType)}
                 options={engineTypeOptions}
@@ -241,7 +261,7 @@ export function ImportCalculator() {
 
               {/* Year */}
               <SelectField
-                label="Година на производство"
+                label={t("yearLabel", lang)}
                 value={year}
                 onChange={(v) => setYear(v)}
                 options={yearOptions}
@@ -252,7 +272,7 @@ export function ImportCalculator() {
                 onClick={handleCalculate}
                 className="w-full cursor-pointer rounded-xl bg-customYellow py-3.5 font-bold text-black transition-colors hover:bg-customYellow-dark"
               >
-                Изчисли цената
+                {t("calcBtn", lang)}
               </button>
             </div>
 
@@ -266,17 +286,17 @@ export function ImportCalculator() {
             >
               <div className="mt-6 border-t border-gray-700/50 pt-6">
                 <div className="space-y-3">
-                  <ResultRow label="Цена на колата" value={result ? formatEur(result.eurPrice) : ""} />
-                  <ResultRow label="Аукционни такси (~10% + fees)" value={result ? formatEur(result.auctionFees) : ""} />
-                  <ResultRow label="Транспорт САЩ → България" value={result ? formatEur(result.shippingCost) : ""} />
-                  <ResultRow label="Мито (10% от CIF)" value={result ? formatEur(result.customsDuty) : ""} />
-                  <ResultRow label="Еко такса" value={result ? formatEur(result.ecoTax) : ""} />
-                  <ResultRow label="ДДС (20%)" value={result ? formatEur(result.vat) : ""} />
-                  <ResultRow label="Регистрация + преглед" value={result ? formatEur(result.registration) : ""} />
+                  <ResultRow label={t("resCarPrice", lang)} value={result ? formatEur(result.eurPrice) : ""} />
+                  <ResultRow label={t("resAuction", lang)} value={result ? formatEur(result.auctionFees) : ""} />
+                  <ResultRow label={t("resShipping", lang)} value={result ? formatEur(result.shippingCost) : ""} />
+                  <ResultRow label={t("resCustoms", lang)} value={result ? formatEur(result.customsDuty) : ""} />
+                  <ResultRow label={t("resEco", lang)} value={result ? formatEur(result.ecoTax) : ""} />
+                  <ResultRow label={t("resVat", lang)} value={result ? formatEur(result.vat) : ""} />
+                  <ResultRow label={t("resReg", lang)} value={result ? formatEur(result.registration) : ""} />
 
                   {/* Total */}
                   <div className="flex items-center justify-between pt-3">
-                    <span className="text-lg font-bold text-white">Обща цена</span>
+                    <span className="text-lg font-bold text-white">{t("resTotal", lang)}</span>
                     <span className="text-xl font-bold text-customYellow">
                       {result ? formatEur(result.total) : ""}
                     </span>
@@ -293,7 +313,7 @@ export function ImportCalculator() {
                         </svg>
                       </div>
                       <span className="text-sm font-semibold text-emerald-400">
-                        Спестявате с Best Auto
+                        {t("savingsWith", lang)}
                       </span>
                     </div>
 
@@ -301,7 +321,7 @@ export function ImportCalculator() {
                       <div className="flex-1">
                         <div className="flex items-center gap-3">
                           <div>
-                            <p className="text-[11px] text-gray-500">Цена в БГ пазар</p>
+                            <p className="text-[11px] text-gray-500">{t("bgMarketPrice", lang)}</p>
                             <p className="text-base font-semibold text-gray-400 line-through">
                               {formatEur(result.bgMarketPrice)}
                             </p>
@@ -310,7 +330,7 @@ export function ImportCalculator() {
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                           </svg>
                           <div>
-                            <p className="text-[11px] text-emerald-400/70">С Best Auto</p>
+                            <p className="text-[11px] text-emerald-400/70">{t("withBestAuto", lang)}</p>
                             <p className="text-base font-bold text-white">
                               {formatEur(result.total)}
                             </p>
@@ -323,7 +343,7 @@ export function ImportCalculator() {
                           -{result.savingsPercent}%
                         </p>
                         <p className="text-xs text-emerald-400/70">
-                          {formatEur(result.savings)} спестени
+                          {formatEur(result.savings)} {t("saved", lang)}
                         </p>
                       </div>
                     </div>
@@ -331,7 +351,7 @@ export function ImportCalculator() {
                 )}
 
                 <p className="mt-4 text-xs text-gray-500">
-                  * Цените са приблизителни. Сравнението е базирано на средни цени от mobile.bg и auto.bg за аналогичен автомобил.
+                  {t("disclaimer", lang)}
                 </p>
               </div>
             </div>

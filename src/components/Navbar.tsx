@@ -31,28 +31,47 @@ interface NavLink {
   dropdown?: DropdownGroup[];
 }
 
-const navLinks: NavLink[] = [
-  { label: "Начало", href: "#", active: true },
-  { label: "Как работи", href: "#how-it-works" },
-  { label: "Последни лотове", href: "#offers" },
-  {
-    label: "Аукциони",
-    href: "#",
-    dropdown: [
-      {
-        items: [
-          { label: "Copart", href: "https://www.copart.com", image: "/assets/images/copart_logo.jpg" },
-          { label: "IAAI", href: "https://www.iaai.com", image: "/assets/images/iaai_logo.jpg" },
-          { label: "Manheim", href: "https://www.manheim.com", image: "/assets/images/manheim_logo.jpg" },
-          { label: "AutoBidMaster", href: "https://www.autobidmaster.com", image: "/images/icons/abm-logo-white.89480f31.svg" },
-        ],
-      },
-    ],
-  },
-  { label: "Калкулатор", href: "#calculator" },
-  { label: "Отзиви", href: "#testimonials" },
-  { label: "За нас", href: "/about" },
-];
+const tx = {
+  home:       { bg: "Начало",           ru: "Главная" },
+  howItWorks: { bg: "Как работи",       ru: "Как это работает" },
+  lots:       { bg: "Последни лотове",  ru: "Последние лоты" },
+  auctions:   { bg: "Аукциони",         ru: "Аукционы" },
+  calculator: { bg: "Калкулатор",       ru: "Калькулятор" },
+  reviews:    { bg: "Отзиви",           ru: "Отзывы" },
+  about:      { bg: "За нас",           ru: "О нас" },
+  workHours:  { bg: "Работно време: Пон.- Нед. 10:00-20:00", ru: "Рабочее время: Пн.- Вс. 10:00-20:00" },
+  phone:      { bg: "Телефон:",         ru: "Телефон:" },
+} as const;
+
+type TxKey = keyof typeof tx;
+function tr(key: TxKey, lang: string): string {
+  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+}
+
+function getNavLinks(lang: string): NavLink[] {
+  return [
+    { label: tr("home", lang), href: "#", active: true },
+    { label: tr("howItWorks", lang), href: "#how-it-works" },
+    { label: tr("lots", lang), href: "#offers" },
+    {
+      label: tr("auctions", lang),
+      href: "#",
+      dropdown: [
+        {
+          items: [
+            { label: "Copart", href: "https://www.copart.com", image: "/assets/images/copart_logo.jpg" },
+            { label: "IAAI", href: "https://www.iaai.com", image: "/assets/images/iaai_logo.jpg" },
+            { label: "Manheim", href: "https://www.manheim.com", image: "/assets/images/manheim_logo.jpg" },
+            { label: "AutoBidMaster", href: "https://www.autobidmaster.com", image: "/images/icons/abm-logo-white.89480f31.svg" },
+          ],
+        },
+      ],
+    },
+    { label: tr("calculator", lang), href: "#calculator" },
+    { label: tr("reviews", lang), href: "#testimonials" },
+    { label: tr("about", lang), href: "/about" },
+  ];
+}
 
 function DesktopDropdown({
   groups,
@@ -211,6 +230,8 @@ function MobileDropdown({
 export function Navbar() {
   const params = useParams();
   const lang = (params?.lang as string) ?? "bg";
+  const prefix = `/${lang}`;
+  const navLinks = getNavLinks(lang);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -264,12 +285,12 @@ export function Navbar() {
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-8">
           <div className="flex items-center gap-2 text-xs text-gray-400">
             <GlobeIcon className="h-4 w-4" />
-            <span>Работно време: Пон.- Нед. 10:00-20:00</span>
+            <span>{tr("workHours", lang)}</span>
           </div>
           <div className="flex items-center gap-4 text-xs text-gray-400">
             <a href="tel:+359885451689" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <PhoneIcon className="h-3.5 w-3.5" />
-              <span>Телефон: +359 885 451 689</span>
+              <span>{tr("phone", lang)} +359 885 451 689</span>
             </a>
             <a href="viber://chat?number=%2B359885451689" className="hover:text-white transition-colors" aria-label="Viber">
               <ViberIcon className="h-4 w-4" />
@@ -277,16 +298,32 @@ export function Navbar() {
             <a href="https://t.me/+359885451689" className="hover:text-white transition-colors" aria-label="Telegram">
               <TelegramIcon className="h-4 w-4" />
             </a>
-            <button className="flex items-center gap-1 hover:text-white transition-colors">
-              <Image
-                src="/images/icons/bulgaria-flag.svg"
-                alt="БГ flag"
-                width={16}
-                height={16}
-              />
-              <span>БГ</span>
-              <ChevronDownIcon className="h-3 w-3" />
-            </button>
+            <div
+              className="relative"
+              onMouseEnter={() => handleMouseEnter("__lang__")}
+              onMouseLeave={handleMouseLeave}
+            >
+              <button className="flex items-center gap-1 hover:text-white transition-colors">
+                <span>{lang === "ru" ? "РУ" : "БГ"}</span>
+                <ChevronDownIcon className={`h-3 w-3 transition-transform duration-200 ${openDropdown === "__lang__" ? "rotate-180" : ""}`} />
+              </button>
+              <div className={`absolute right-0 top-full pt-1 z-50 transition-all duration-200 ${openDropdown === "__lang__" ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
+                <div className="rounded-lg border border-white/10 bg-gray-900/95 backdrop-blur-xl shadow-2xl overflow-hidden min-w-[100px]">
+                  {[
+                    { code: "bg", label: "Български" },
+                    { code: "ru", label: "Русский" },
+                  ].map((l) => (
+                    <a
+                      key={l.code}
+                      href={`/${l.code}`}
+                      className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#E1E100] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
+                    >
+                      {l.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -294,7 +331,7 @@ export function Navbar() {
       {/* Main nav */}
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 lg:h-20">
         {/* Logo */}
-        <a href="#" className="flex-shrink-0">
+        <a href={`${prefix}/`} className="flex-shrink-0">
           <Image
             src="/images/logo.svg"
             alt="Best Auto"
@@ -316,7 +353,7 @@ export function Navbar() {
               onMouseLeave={link.dropdown ? handleMouseLeave : undefined}
             >
               <a
-                href={link.href.startsWith("/") ? `/${lang}${link.href}` : link.href.startsWith("#") ? `/${lang}/${link.href}` : link.href}
+                href={link.href.startsWith("/") ? `${prefix}${link.href}` : link.href.startsWith("#") ? `${prefix}/${link.href}` : link.href}
                 className={`flex items-center gap-1 px-3 py-2 text-sm transition-colors relative ${
                   link.active
                     ? "text-white font-bold"
@@ -394,7 +431,7 @@ export function Navbar() {
               <div key={link.label}>
                 <div className="flex items-center">
                   <a
-                    href={link.href.startsWith("/") ? `/${lang}${link.href}` : link.href.startsWith("#") ? `/${lang}/${link.href}` : link.href}
+                    href={link.href.startsWith("/") ? `${prefix}${link.href}` : link.href.startsWith("#") ? `${prefix}/${link.href}` : link.href}
                     className={`flex-1 py-3 px-4 text-lg rounded-lg transition-colors ${
                       link.active
                         ? "text-[#E1E100] font-bold bg-white/5"

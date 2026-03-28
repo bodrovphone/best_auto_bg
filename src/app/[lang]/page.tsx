@@ -7,23 +7,26 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { ImportCalculator } from "@/components/ImportCalculator";
 import { StatsSection } from "@/components/StatsSection";
 
-export default function HomePage() {
+type Props = { params: Promise<{ lang: string }> };
+
+export default async function HomePage({ params }: Props) {
+  const { lang } = await params;
   return (
     <div className="max-w-screen overflow-x-hidden bg-[#0F1515]">
-      <HeroSection />
-      <TickerB />
+      <HeroSection lang={lang} />
+      <TickerB lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <HowItWorks />
+      <HowItWorks lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <OffersSection />
+      <OffersSection lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <TestimonialsSection />
+      <TestimonialsSection lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <WhyChooseUs />
+      <WhyChooseUs lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <ImportCalculator />
+      <ImportCalculator lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <StatsSection />
+      <StatsSection lang={lang} />
       <div className="separator h-[1px] w-full" />
     </div>
   );
