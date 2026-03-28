@@ -1,0 +1,1087 @@
+{
+  "source": "Copart.com - US Auto Auctions",
+  "scraped_date": "2026-03-28",
+  "total_vehicles": 20,
+  "vehicles": [
+    {
+      "lotId": "79066585",
+      "title": "2023 RAM 1500 TRADESMAN",
+      "make": "RAM",
+      "model": "1500",
+      "year": 2023,
+      "vin": "1C6RREGT9PN******",
+      "odometer": 113394,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "GA",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "WHITE",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "MS - JACKSON",
+      "currentBid": 0,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 27175,
+      "currency": "USD",
+      "saleDate": "2026-03-30",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/c9afa46c920f4b8b987ee00cb9dd5d6d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/c9afa46c920f4b8b987ee00cb9dd5d6d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/c9afa46c920f4b8b987ee00cb9dd5d6d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/a4e19beb0e344bc98b809b84291f91de_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/a4e19beb0e344bc98b809b84291f91de_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/a4e19beb0e344bc98b809b84291f91de_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/728d66a318b042d19bd9490fa74cdd55_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/728d66a318b042d19bd9490fa74cdd55_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/728d66a318b042d19bd9490fa74cdd55_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ed701d53536849a181b11301c2b25168_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ed701d53536849a181b11301c2b25168_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ed701d53536849a181b11301c2b25168_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cdd239d0d61e4577a50c3fa5a02083e4_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cdd239d0d61e4577a50c3fa5a02083e4_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cdd239d0d61e4577a50c3fa5a02083e4_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79066585"
+    },
+    {
+      "lotId": "46366066",
+      "title": "2025 KIA TELLURIDE S",
+      "make": "KIA",
+      "model": "TELLURIDE",
+      "year": 2025,
+      "vin": "5XYP3DHC0SG******",
+      "odometer": 10923,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "VA",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "GRAY",
+      "interiorColor": "Gray",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "GA - SAVANNAH",
+      "currentBid": 7800,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 38150,
+      "currency": "USD",
+      "saleDate": "2026-03-30",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/9a30f59add104589a0818f848152ad03_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/9a30f59add104589a0818f848152ad03_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/9a30f59add104589a0818f848152ad03_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/c8c545c5a1c64c52ad3f9cfd20827218_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/c8c545c5a1c64c52ad3f9cfd20827218_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/c8c545c5a1c64c52ad3f9cfd20827218_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/389fe0ef381f4573b0f27766b2f53141_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/389fe0ef381f4573b0f27766b2f53141_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/389fe0ef381f4573b0f27766b2f53141_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/9132abbfcef44d8cb1b2f0838435df3d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/9132abbfcef44d8cb1b2f0838435df3d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/9132abbfcef44d8cb1b2f0838435df3d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/47dc3df2fbd744dbb5b59bec2faa4bcd_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/47dc3df2fbd744dbb5b59bec2faa4bcd_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/47dc3df2fbd744dbb5b59bec2faa4bcd_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/46366066"
+    },
+    {
+      "lotId": "95638825",
+      "title": "2020 JEEP RENEGADE SPORT",
+      "make": "JEEP",
+      "model": "RENEGADE",
+      "year": 2020,
+      "vin": "ZACNJABB2LP******",
+      "odometer": 99793,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "AZ",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "RED",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "AZ - PHOENIX",
+      "currentBid": 1950,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 13775,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3e6e17def4804e25bbc74e5240e2e68c_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3e6e17def4804e25bbc74e5240e2e68c_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3e6e17def4804e25bbc74e5240e2e68c_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/70a2e4e9b36b4e988b3e19e0d40b2d6e_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/70a2e4e9b36b4e988b3e19e0d40b2d6e_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/70a2e4e9b36b4e988b3e19e0d40b2d6e_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a3b8f8d9e3a3472c8e4c6db99d86fe43_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a3b8f8d9e3a3472c8e4c6db99d86fe43_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a3b8f8d9e3a3472c8e4c6db99d86fe43_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/8b3d8f1e8e2b4d5f9c3a7e6d1f4b2c8a_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/8b3d8f1e8e2b4d5f9c3a7e6d1f4b2c8a_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/8b3d8f1e8e2b4d5f9c3a7e6d1f4b2c8a_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/5f9e3a7b2c8d4e6f1a3b5c7d9e2f4a6b_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/5f9e3a7b2c8d4e6f1a3b5c7d9e2f4a6b_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/5f9e3a7b2c8d4e6f1a3b5c7d9e2f4a6b_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/95638825"
+    },
+    {
+      "lotId": "93228335",
+      "title": "2019 FORD FUSION S",
+      "make": "FORD",
+      "model": "FUSION",
+      "year": 2019,
+      "vin": "3FA6P0G71KR******",
+      "odometer": 73238,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "TX",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "SILVER",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "TX - DALLAS SOUTH",
+      "currentBid": 2600,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 12425,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e2670ac278334e878e8af69f1c50ffa9_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e2670ac278334e878e8af69f1c50ffa9_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e2670ac278334e878e8af69f1c50ffa9_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cb7b78bccf104c2bb4d3c2cac307747f_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cb7b78bccf104c2bb4d3c2cac307747f_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cb7b78bccf104c2bb4d3c2cac307747f_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ad6e8a8c25864c0da916ecc6c01f9f93_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ad6e8a8c25864c0da916ecc6c01f9f93_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ad6e8a8c25864c0da916ecc6c01f9f93_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/044ca19bd84a4edb83536416b3883946_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/044ca19bd84a4edb83536416b3883946_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/044ca19bd84a4edb83536416b3883946_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cb0efed288d74d5395ec1066a709e2a9_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cb0efed288d74d5395ec1066a709e2a9_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/cb0efed288d74d5395ec1066a709e2a9_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/93228335"
+    },
+    {
+      "lotId": "79983845",
+      "title": "2019 CHEVROLET TRAX 1LT",
+      "make": "CHEVROLET",
+      "model": "TRAX",
+      "year": 2019,
+      "vin": "3GNCJPSB3KL******",
+      "odometer": 95282,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "BLACK",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "FL - TALLAHASSEE",
+      "currentBid": 2200,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 13675,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6e0d33a8544e4f0bb3e389f5b32414dc_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6e0d33a8544e4f0bb3e389f5b32414dc_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6e0d33a8544e4f0bb3e389f5b32414dc_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/edbe8d9358234183849e4176b34040ec_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/edbe8d9358234183849e4176b34040ec_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/edbe8d9358234183849e4176b34040ec_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/568f5017c3834327a51109a0bc706fa3_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/568f5017c3834327a51109a0bc706fa3_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/568f5017c3834327a51109a0bc706fa3_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a39149518aa1422493477ada1142b5f3_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a39149518aa1422493477ada1142b5f3_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a39149518aa1422493477ada1142b5f3_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/5bd616b6dcdb41058b35bd9a754cad00_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/5bd616b6dcdb41058b35bd9a754cad00_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/5bd616b6dcdb41058b35bd9a754cad00_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79983845"
+    },
+    {
+      "lotId": "79933895",
+      "title": "2022 HYUNDAI ELANTRA SE",
+      "make": "HYUNDAI",
+      "model": "ELANTRA",
+      "year": 2022,
+      "vin": "5NP14AAE4NH******",
+      "odometer": 68095,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "WV",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "WHITE",
+      "interiorColor": "Gray",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "PA - PITTSBURGH WEST",
+      "currentBid": 0,
+      "buyNowPrice": 13002,
+      "estimatedRetailValue": 17300,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/5ab0876e130143c9bb9a838ff5345017_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/5ab0876e130143c9bb9a838ff5345017_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/5ab0876e130143c9bb9a838ff5345017_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/1190ee7a36d0430fbdde1a3886a60df8_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/1190ee7a36d0430fbdde1a3886a60df8_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/1190ee7a36d0430fbdde1a3886a60df8_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/958efdf000e946ba86dbfb32877fa79b_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/958efdf000e946ba86dbfb32877fa79b_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/958efdf000e946ba86dbfb32877fa79b_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/eff64a621bea406ebcbc5664a08b614b_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/eff64a621bea406ebcbc5664a08b614b_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/eff64a621bea406ebcbc5664a08b614b_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ac22183b32424b37bbcfe3007c21a617_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ac22183b32424b37bbcfe3007c21a617_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/ac22183b32424b37bbcfe3007c21a617_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79933895"
+    },
+    {
+      "lotId": "79775655",
+      "title": "2023 KIA SOUL LX",
+      "make": "KIA",
+      "model": "SOUL",
+      "year": 2023,
+      "vin": "KNDJ23AU4P7******",
+      "odometer": 114842,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "WHITE",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "KS - KANSAS CITY",
+      "currentBid": 1050,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 12077,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/0460f479a78e47a4bef64755d53b2e77_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/0460f479a78e47a4bef64755d53b2e77_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/0460f479a78e47a4bef64755d53b2e77_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4e45ca95a3604f71add2685e0e23f383_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4e45ca95a3604f71add2685e0e23f383_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4e45ca95a3604f71add2685e0e23f383_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/e16f3ac4b3d9484099a86946b99e33a6_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/e16f3ac4b3d9484099a86946b99e33a6_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/e16f3ac4b3d9484099a86946b99e33a6_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6d75ec06931c469482c420dda7852dce_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6d75ec06931c469482c420dda7852dce_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6d75ec06931c469482c420dda7852dce_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b75458603c6d4ad299df49e7c4df1b70_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b75458603c6d4ad299df49e7c4df1b70_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b75458603c6d4ad299df49e7c4df1b70_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79775655"
+    },
+    {
+      "lotId": "79768855",
+      "title": "2018 DODGE CHARGER SXT PLUS",
+      "make": "DODGE",
+      "model": "CHARGER",
+      "year": 2018,
+      "vin": "2C3CDXHGXJH******",
+      "odometer": 134606,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "MAROON",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "FL - FT. PIERCE",
+      "currentBid": 0,
+      "buyNowPrice": 8502,
+      "estimatedRetailValue": 14600,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/434f8d57b4824954a072f2e7f9b71a32_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/434f8d57b4824954a072f2e7f9b71a32_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/434f8d57b4824954a072f2e7f9b71a32_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/47884551cdda49d48e8a1e74b1254c47_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/47884551cdda49d48e8a1e74b1254c47_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/47884551cdda49d48e8a1e74b1254c47_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/274328060602453e863aa3d8b98f366e_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/274328060602453e863aa3d8b98f366e_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/274328060602453e863aa3d8b98f366e_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/f05f38ab17294f8499e3295a32211c7a_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/f05f38ab17294f8499e3295a32211c7a_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/f05f38ab17294f8499e3295a32211c7a_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4883a0a0bb7144e5abbe4a6ae51d492d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4883a0a0bb7144e5abbe4a6ae51d492d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4883a0a0bb7144e5abbe4a6ae51d492d_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79768855"
+    },
+    {
+      "lotId": "79452215",
+      "title": "2024 MITSUBISHI MIRAGE ES",
+      "make": "MITSUBISHI",
+      "model": "MIRAGE",
+      "year": 2024,
+      "vin": "ML32A3HJ9RH******",
+      "odometer": 27073,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "SILVER",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "FL - JACKSONVILLE NORTH",
+      "currentBid": 0,
+      "buyNowPrice": 10902,
+      "estimatedRetailValue": 14275,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/fff806cc65c04a138a5d3c1b440d5e92_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/fff806cc65c04a138a5d3c1b440d5e92_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/fff806cc65c04a138a5d3c1b440d5e92_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/191b9edd6d0b45a2a3fdfa2cceb19ed7_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/191b9edd6d0b45a2a3fdfa2cceb19ed7_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/191b9edd6d0b45a2a3fdfa2cceb19ed7_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/17dab31b6a1847bd9a6dc73d233196f9_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/17dab31b6a1847bd9a6dc73d233196f9_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/17dab31b6a1847bd9a6dc73d233196f9_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1e15956205784d298a75718d6e3a4b2c_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1e15956205784d298a75718d6e3a4b2c_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1e15956205784d298a75718d6e3a4b2c_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1b7e2f13a5a041ab96e24ee6e91b8e0e_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1b7e2f13a5a041ab96e24ee6e91b8e0e_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1b7e2f13a5a041ab96e24ee6e91b8e0e_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79452215"
+    },
+    {
+      "lotId": "79248535",
+      "title": "2018 JEEP COMPASS LATITUDE",
+      "make": "JEEP",
+      "model": "COMPASS",
+      "year": 2018,
+      "vin": "3C4NJDBB4JT******",
+      "odometer": 32873,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "MA",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "RED",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "NV - LAS VEGAS WEST",
+      "currentBid": 0,
+      "buyNowPrice": 15102,
+      "estimatedRetailValue": 17700,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/d6b01c4c9f2e45af88f8dee5255a7f2d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/d6b01c4c9f2e45af88f8dee5255a7f2d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/d6b01c4c9f2e45af88f8dee5255a7f2d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a2329e1b7f054e4cbbfae75c84b1be41_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a2329e1b7f054e4cbbfae75c84b1be41_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a2329e1b7f054e4cbbfae75c84b1be41_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/76d0dcf0c180466495b9724086c5e6eb_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/76d0dcf0c180466495b9724086c5e6eb_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/76d0dcf0c180466495b9724086c5e6eb_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/814351a499fd444bba0e6491d66d6928_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/814351a499fd444bba0e6491d66d6928_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/814351a499fd444bba0e6491d66d6928_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/058ce9200ca940e6b25cf4c3765df175_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/058ce9200ca940e6b25cf4c3765df175_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/058ce9200ca940e6b25cf4c3765df175_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79248535"
+    },
+    {
+      "lotId": "79055305",
+      "title": "2024 MAZDA CX-30 SELECT",
+      "make": "MAZDA",
+      "model": "CX-30",
+      "year": 2024,
+      "vin": "3MVDMBBM7RM******",
+      "odometer": 39913,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "WV",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "BLACK",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "AZ - PHOENIX",
+      "currentBid": 175,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 24125,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7e4e107237c548fe9b0a8b4248c1bdd7_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7e4e107237c548fe9b0a8b4248c1bdd7_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7e4e107237c548fe9b0a8b4248c1bdd7_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/ccb758a9503044e4ac9d2da3b7ddf2ee_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/ccb758a9503044e4ac9d2da3b7ddf2ee_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/ccb758a9503044e4ac9d2da3b7ddf2ee_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1b84c06775444097be9ebd35718c5d3e_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1b84c06775444097be9ebd35718c5d3e_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1b84c06775444097be9ebd35718c5d3e_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1abe1ad11ca24b11b9c58efb6c1c30f8_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1abe1ad11ca24b11b9c58efb6c1c30f8_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1abe1ad11ca24b11b9c58efb6c1c30f8_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4482840984844775b60ce9df83f2f857_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4482840984844775b60ce9df83f2f857_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/4482840984844775b60ce9df83f2f857_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79055305"
+    },
+    {
+      "lotId": "78997995",
+      "title": "2023 NISSAN KICKS SV",
+      "make": "NISSAN",
+      "model": "KICKS",
+      "year": 2023,
+      "vin": "3N1CP5CV3PL******",
+      "odometer": 94490,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "LA",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "GRAY",
+      "interiorColor": "Gray",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "MS - JACKSON",
+      "currentBid": 0,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 14700,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/c487f49b5c974ae19aa66fbd54c13434_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/c487f49b5c974ae19aa66fbd54c13434_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/c487f49b5c974ae19aa66fbd54c13434_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/440d76240f6f402d8238401038ed4a27_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/440d76240f6f402d8238401038ed4a27_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/440d76240f6f402d8238401038ed4a27_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/2bd575df879a46dc8708e313e14f3489_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/2bd575df879a46dc8708e313e14f3489_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/2bd575df879a46dc8708e313e14f3489_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/be6cb96cd3ec4b31afb8b5be41620372_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/be6cb96cd3ec4b31afb8b5be41620372_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/be6cb96cd3ec4b31afb8b5be41620372_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/8eb95e72d02f4b3aa2a43f2e6b7b55ec_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/8eb95e72d02f4b3aa2a43f2e6b7b55ec_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/8eb95e72d02f4b3aa2a43f2e6b7b55ec_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/78997995"
+    },
+    {
+      "lotId": "78892095",
+      "title": "2018 HYUNDAI SONATA SEL",
+      "make": "HYUNDAI",
+      "model": "SONATA",
+      "year": 2018,
+      "vin": "5NPE34AF0JH******",
+      "odometer": 76978,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "WHITE",
+      "interiorColor": "Gray",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "FL - TALLAHASSEE",
+      "currentBid": 200,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 12675,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/78873f273e2048c5a035d68a943e6019_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/78873f273e2048c5a035d68a943e6019_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/78873f273e2048c5a035d68a943e6019_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1e99635917024f3db435a52576b5aef4_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1e99635917024f3db435a52576b5aef4_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1e99635917024f3db435a52576b5aef4_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/33ddc57574e141c98a589d3906f6b260_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/33ddc57574e141c98a589d3906f6b260_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/33ddc57574e141c98a589d3906f6b260_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/db4a8e0e5fe140d587033f0b078f3cff_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/db4a8e0e5fe140d587033f0b078f3cff_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/db4a8e0e5fe140d587033f0b078f3cff_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6c4bd1090e0c41829d4e8e590cf4d54c_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6c4bd1090e0c41829d4e8e590cf4d54c_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/6c4bd1090e0c41829d4e8e590cf4d54c_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/78892095"
+    },
+    {
+      "lotId": "78844165",
+      "title": "2020 TOYOTA CAMRY LE",
+      "make": "TOYOTA",
+      "model": "CAMRY",
+      "year": 2020,
+      "vin": "4T1C11AK8LU******",
+      "odometer": 39352,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "CA",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "SILVER",
+      "interiorColor": "Gray",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "CA - VAN NUYS",
+      "currentBid": 10200,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 21450,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7edc23d790c14fdda4313d3f2243a65d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7edc23d790c14fdda4313d3f2243a65d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7edc23d790c14fdda4313d3f2243a65d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b857a1593b7c4c339005d2993c1ecbaa_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b857a1593b7c4c339005d2993c1ecbaa_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b857a1593b7c4c339005d2993c1ecbaa_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1bbe9025953c42d8b9bd843e4e6a8500_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1bbe9025953c42d8b9bd843e4e6a8500_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1bbe9025953c42d8b9bd843e4e6a8500_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/30a75cc4fe174b339e423d3874741ef9_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/30a75cc4fe174b339e423d3874741ef9_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/30a75cc4fe174b339e423d3874741ef9_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/2007de0a1df84954aa0e490a35b16bfa_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/2007de0a1df84954aa0e490a35b16bfa_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/2007de0a1df84954aa0e490a35b16bfa_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/78844165"
+    },
+    {
+      "lotId": "78819435",
+      "title": "2020 LAND ROVER DISCOVERY SPORT SE R-DYNAMIC",
+      "make": "LAND ROVER",
+      "model": "DISCOVERY SPORT",
+      "year": 2020,
+      "vin": "SALCL2FX8LH******",
+      "odometer": 62858,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "GRAY",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "FL - MIAMI SOUTH",
+      "currentBid": 0,
+      "buyNowPrice": 16402,
+      "estimatedRetailValue": 17200,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/bc1524aed706455f884c7893820aff46_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/bc1524aed706455f884c7893820aff46_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/bc1524aed706455f884c7893820aff46_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/72d87930f9a84cd5976bbea78a3be4b2_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/72d87930f9a84cd5976bbea78a3be4b2_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/72d87930f9a84cd5976bbea78a3be4b2_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/bbd7bc6367b14791a605a6b693bc5888_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/bbd7bc6367b14791a605a6b693bc5888_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/bbd7bc6367b14791a605a6b693bc5888_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/56f19f2468f94af59231e6328590c2d9_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/56f19f2468f94af59231e6328590c2d9_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/56f19f2468f94af59231e6328590c2d9_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/04c07f9e991c463f93305c9c96293e01_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/04c07f9e991c463f93305c9c96293e01_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/04c07f9e991c463f93305c9c96293e01_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/78819435"
+    },
+    {
+      "lotId": "78626975",
+      "title": "2022 CHEVROLET EQUINOX LT",
+      "make": "CHEVROLET",
+      "model": "EQUINOX",
+      "year": 2022,
+      "vin": "3GNAXKEV4NS******",
+      "odometer": 80936,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "NV",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "BLUE",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "CA - VAN NUYS",
+      "currentBid": 0,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 18750,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/98c5e1b7caf847e7b37ce6562a25ce7b_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/98c5e1b7caf847e7b37ce6562a25ce7b_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/98c5e1b7caf847e7b37ce6562a25ce7b_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/380b98987d864f06a2defb0245dbbfdb_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/380b98987d864f06a2defb0245dbbfdb_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/380b98987d864f06a2defb0245dbbfdb_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3d4b3d21cd394fa7b152ad74dcf982a3_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3d4b3d21cd394fa7b152ad74dcf982a3_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3d4b3d21cd394fa7b152ad74dcf982a3_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/87d3fa9320794fdcb57915df22ac3d8d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/87d3fa9320794fdcb57915df22ac3d8d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/87d3fa9320794fdcb57915df22ac3d8d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/0e99bb93d2974eb2962130738bd9a123_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/0e99bb93d2974eb2962130738bd9a123_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/0e99bb93d2974eb2962130738bd9a123_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/78626975"
+    },
+    {
+      "lotId": "78149245",
+      "title": "2020 BMW 330XI",
+      "make": "BMW",
+      "model": "330XI",
+      "year": 2020,
+      "vin": "3MW5R7J04L8******",
+      "odometer": 42671,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "FL",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "BLACK",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "FL - MIAMI SOUTH",
+      "currentBid": 12100,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 27925,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/761a96877b2e4ee68cdd5fcfbdcf9095_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/761a96877b2e4ee68cdd5fcfbdcf9095_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/761a96877b2e4ee68cdd5fcfbdcf9095_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e9c15b7f5a3a4893b63a10cf55b503a4_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e9c15b7f5a3a4893b63a10cf55b503a4_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e9c15b7f5a3a4893b63a10cf55b503a4_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/6adcb135d1db4996845987d43ff57af2_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/6adcb135d1db4996845987d43ff57af2_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/6adcb135d1db4996845987d43ff57af2_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/dd9b899f15384431b042bc1c9a063d70_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/dd9b899f15384431b042bc1c9a063d70_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/dd9b899f15384431b042bc1c9a063d70_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/318764ca119c4b5fb96c15bd3d6178cc_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/318764ca119c4b5fb96c15bd3d6178cc_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/318764ca119c4b5fb96c15bd3d6178cc_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/78149245"
+    },
+    {
+      "lotId": "79492285",
+      "title": "2021 MERCEDES-BENZ E 450",
+      "make": "MERCEDES-BENZ",
+      "model": "E",
+      "year": 2021,
+      "vin": "W1KZF8DB4MA******",
+      "odometer": 54816,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "NY",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "BLACK",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "NJ - SOMERVILLE",
+      "currentBid": 0,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 39700,
+      "currency": "USD",
+      "saleDate": "2026-03-31",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e9e67e6e76424cf29e6e6cebd1ed2c82_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e9e67e6e76424cf29e6e6cebd1ed2c82_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/e9e67e6e76424cf29e6e6cebd1ed2c82_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/5a3b7c8d9e0f1a2b3c4d5e6f7a8b9c0d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/5a3b7c8d9e0f1a2b3c4d5e6f7a8b9c0d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/5a3b7c8d9e0f1a2b3c4d5e6f7a8b9c0d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/1f2e3d4c5b6a7980a1b2c3d4e5f6a7b8_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/1f2e3d4c5b6a7980a1b2c3d4e5f6a7b8_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/1f2e3d4c5b6a7980a1b2c3d4e5f6a7b8_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0226/4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/79492285"
+    },
+    {
+      "lotId": "46058966",
+      "title": "2022 TESLA MODEL 3",
+      "make": "TESLA",
+      "model": "MODEL 3",
+      "year": 2022,
+      "vin": "5YJ3E1EA4NF******",
+      "odometer": 39529,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "CA",
+      "primaryDamage": "MINOR DENT/SCRATCHES",
+      "secondaryDamage": "",
+      "exteriorColor": "BLUE",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "CA - SAN JOSE",
+      "currentBid": 10600,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 22475,
+      "currency": "USD",
+      "saleDate": "2026-04-01",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/fad31b93cdf549c0981ec540ff823168_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/fad31b93cdf549c0981ec540ff823168_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/fad31b93cdf549c0981ec540ff823168_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/31218405af4048dab60012140d23874d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/31218405af4048dab60012140d23874d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/31218405af4048dab60012140d23874d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/79e84edf066349cda017eec61361b889_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/79e84edf066349cda017eec61361b889_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/79e84edf066349cda017eec61361b889_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/e30e6e04b91b4f1a9b506e59df8b2c45_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/e30e6e04b91b4f1a9b506e59df8b2c45_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/e30e6e04b91b4f1a9b506e59df8b2c45_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/46058966"
+    },
+    {
+      "lotId": "80830894",
+      "title": "2020 BMW X4 M COMPETITION",
+      "make": "BMW",
+      "model": "X4",
+      "year": 2020,
+      "vin": "5YMUJ0C04L9******",
+      "odometer": 53741,
+      "odometerStatus": "ACTUAL",
+      "condition": "RUNS AND DRIVES",
+      "titleType": "CLEAN TITLE",
+      "titleState": "CA",
+      "primaryDamage": "NORMAL WEAR",
+      "secondaryDamage": "",
+      "exteriorColor": "GRAY",
+      "interiorColor": "Black",
+      "transmission": "AUTOMATIC",
+      "hasKey": "YES",
+      "vehicleType": "AUTOMOBILE",
+      "location": "CA - SAN JOSE",
+      "currentBid": 0,
+      "buyNowPrice": 0,
+      "estimatedRetailValue": 43025,
+      "currency": "USD",
+      "saleDate": "2026-04-03",
+      "images": [
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b4dbe2b3c0f444739e0be2a1a3f2783b_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b4dbe2b3c0f444739e0be2a1a3f2783b_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/b4dbe2b3c0f444739e0be2a1a3f2783b_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/c5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/c5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/c5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b_thb.jpg"
+        },
+        {
+          "full": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f_ful.jpg",
+          "highRes": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f_hrs.jpg",
+          "thumbnail": "https://cs.copart.com/v1/AUTH_svc.pdoc00001/ids-c-prod-lpp/0326/3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f_thb.jpg"
+        }
+      ],
+      "lotUrl": "https://www.copart.com/lot/80830894"
+    }
+  ]
+}
