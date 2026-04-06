@@ -2,8 +2,8 @@
   <defs>
     <style>
       .logo-text { fill: #FFFFFF; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; }
-      .accent { fill: #E1E100; }
-      .accent-stroke { stroke: #E1E100; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+      .accent { fill: #D4512A; }
+      .accent-stroke { stroke: #D4512A; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
     </style>
   </defs>
 
@@ -36,7 +36,7 @@
   <text class="logo-text accent" x="128" y="30" font-size="24" letter-spacing="2">AUTO</text>
 
   <!-- Subtle underline accent -->
-  <line x1="54" y1="36" x2="196" y2="36" stroke="#E1E100" stroke-width="1.5" opacity="0.5" stroke-linecap="round" />
+  <line x1="54" y1="36" x2="196" y2="36" stroke="#D4512A" stroke-width="1.5" opacity="0.5" stroke-linecap="round" />
 
   <!-- Small tagline -->
   <text fill="#FFFFFF" opacity="0.5" x="54" y="45" font-family="'Inter', 'Helvetica Neue', Arial, sans-serif" font-size="6.5" letter-spacing="3" font-weight="400">USA  TO  BULGARIA</text>

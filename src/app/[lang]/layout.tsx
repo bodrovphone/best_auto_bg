@@ -20,6 +20,25 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "БЕСТ АВТО ЕООД / BEST AUTO LTD",
+            url: "https://best-auto.bg",
+            telephone: "+359877575257",
+            email: "bestauto@mail.com",
+            vatID: "BG208075843",
+            areaServed: { "@type": "Country", name: "Bulgaria" },
+            description: lang === "ru"
+              ? "Импорт автомобилей из США в Болгарию. Полный сервис: аукцион, доставка, таможня, регистрация."
+              : "Внос на автомобили от САЩ в България. Пълно обслужване: аукцион, доставка, мито, регистрация.",
+            serviceType: ["Car Import", "Vehicle Auction Bidding", "Customs Clearance"],
+          }),
+        }}
+      />
       <Navbar />
       <main className="flex-1">{children}</main>
       <Footer lang={lang} />

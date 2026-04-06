@@ -9,9 +9,21 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Внос на автомобили от САЩ | Best Auto",
+  metadataBase: new URL('https://best-auto.bg'),
+  title: {
+    default: "Внос на автомобили от САЩ | Best Auto",
+    template: "%s | Best Auto",
+  },
   description:
     "Внос на коли от САЩ и Канада. Пълно обслужване - избор, закупуване, транспорт, митническо освобождаване и доставка до вашия дом в България.",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -20,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${inter.variable} h-full antialiased`}>
+    <html className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col font-sans bg-[#0F1515] text-white">
         {children}
       </body>

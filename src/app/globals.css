@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-customYellow: #E1E100;
-  --color-customYellow-dark: #C8C800;
+  --color-customYellow: #ED7014;
+  --color-customYellow-dark: #C25808;
   --color-dark-primary: #0F1515;
   --color-dark-secondary: rgb(17, 24, 39);
   --color-emerald-accent: rgb(52, 211, 153);

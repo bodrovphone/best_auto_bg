@@ -9,7 +9,7 @@ export const routing = defineRouting({
     name: 'preferred-language',
     maxAge: 60 * 60 * 24 * 365,
   },
-  alternateLinks: false,
+  alternateLinks: true,
 });
 
 export type Locale = (typeof routing.locales)[number];

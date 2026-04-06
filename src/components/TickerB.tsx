@@ -3,7 +3,7 @@ type Status = "bid" | "won" | "shipping" | "transit" | "customs" | "registration
 const statusConfigByLang: Record<string, Record<Status, { label: string; classes: string }>> = {
   bg: {
     bid:          { label: "\u2B06 \u041D\u0410\u0414\u0414\u0410\u0412\u0410\u041D\u0415",   classes: "bg-yellow-400/10 text-yellow-300/70" },
-    won:          { label: "\u2605 \u0421\u041F\u0415\u0427\u0415\u041B\u0415\u041D",     classes: "bg-[#E1E100]/10 text-[#E1E100]/80" },
+    won:          { label: "\u2605 \u0421\u041F\u0415\u0427\u0415\u041B\u0415\u041D",     classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
     shipping:     { label: "\u25B8 \u0418\u0417\u041F\u0420\u0410\u0429\u0410\u041D\u0415",    classes: "bg-orange-400/10 text-orange-300/70" },
     transit:      { label: "\u2708 \u0422\u0420\u0410\u041D\u0417\u0418\u0422",      classes: "bg-sky-400/10 text-sky-300/70" },
     customs:      { label: "\u2299 \u041C\u0418\u0422\u041D\u0418\u0426\u0410",      classes: "bg-violet-400/10 text-violet-300/70" },
@@ -12,7 +12,7 @@ const statusConfigByLang: Record<string, Record<Status, { label: string; classes
   },
   ru: {
     bid:          { label: "\u2B06 \u0421\u0422\u0410\u0412\u041A\u0410",       classes: "bg-yellow-400/10 text-yellow-300/70" },
-    won:          { label: "\u2605 \u0412\u042B\u0418\u0413\u0420\u0410\u041D",     classes: "bg-[#E1E100]/10 text-[#E1E100]/80" },
+    won:          { label: "\u2605 \u0412\u042B\u0418\u0413\u0420\u0410\u041D",     classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
     shipping:     { label: "\u25B8 \u041E\u0422\u041F\u0420\u0410\u0412\u041A\u0410",    classes: "bg-orange-400/10 text-orange-300/70" },
     transit:      { label: "\u2708 \u0422\u0420\u0410\u041D\u0417\u0418\u0422",      classes: "bg-sky-400/10 text-sky-300/70" },
     customs:      { label: "\u2299 \u0422\u0410\u041C\u041E\u0416\u041D\u042F",      classes: "bg-violet-400/10 text-violet-300/70" },
@@ -79,7 +79,7 @@ function Row({ entry, lang }: { entry: typeof entries[0]; lang: string }) {
       </span>
       <span className="truncate font-medium text-gray-300 pr-4">{entry.vehicle}</span>
       <span className="text-[11px] text-gray-600 truncate">
-        {entry.from}<span className="mx-1 text-[#E1E100]/40">\u2192</span>{entry.to}
+        {entry.from}<span className="mx-1 text-[#ED7014]/40">\u2192</span>{entry.to}
       </span>
       <span className="text-right font-bold text-gray-200">{formatEur(entry.price)}</span>
       <span className="text-right text-[11px] text-emerald-400/60">-{formatEur(entry.saved)}</span>

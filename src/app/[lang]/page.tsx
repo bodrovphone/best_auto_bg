@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { HeroSection } from "@/components/HeroSection";
 import { TickerB } from "@/components/TickerB";
 import { OffersSection } from "@/components/OffersSection";
@@ -8,6 +9,42 @@ import { ImportCalculator } from "@/components/ImportCalculator";
 import { StatsSection } from "@/components/StatsSection";
 
 type Props = { params: Promise<{ lang: string }> };
+
+const meta = {
+  bg: {
+    title: "Внос на автомобили от САЩ | Best Auto",
+    description: "Внос на коли от САЩ — аукцион, доставка, мито, ДДС и регистрация. Пълно обслужване от Best Auto.",
+  },
+  ru: {
+    title: "Импорт автомобилей из США | Best Auto",
+    description: "Импорт авто из США — аукцион, доставка, таможня, НДС и регистрация. Полный сервис от Best Auto.",
+  },
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const m = meta[lang as keyof typeof meta] ?? meta.bg;
+  return {
+    title: m.title,
+    description: m.description,
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      locale: lang === "ru" ? "ru_RU" : "bg_BG",
+      type: "website",
+      siteName: "Best Auto",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.title,
+      description: m.description,
+    },
+    alternates: {
+      canonical: `/${lang}`,
+      languages: { bg: "/bg", ru: "/ru" },
+    },
+  };
+}
 
 export default async function HomePage({ params }: Props) {
   const { lang } = await params;

@@ -28,11 +28,11 @@ function getNavLinks(lang: string) {
   ];
 }
 
-const auctionLinks = [
-  { label: "Copart", href: "https://www.copart.com", image: "/assets/images/copart_logo.jpg" },
-  { label: "IAAI", href: "https://www.iaai.com", image: "/assets/images/iaai_logo.jpg" },
-  { label: "Manheim", href: "https://www.manheim.com", image: "/assets/images/manheim_logo.jpg" },
-  { label: "AutoBidMaster", href: "https://www.autobidmaster.com", image: "/images/icons/abm-logo-white.89480f31.svg" },
+const auctionLinks: { label: string; href: string; image: string; dark?: boolean; invert?: boolean }[] = [
+  { label: "Copart", href: "https://www.copart.com", image: "/images/new_logo_copart.svg", dark: true },
+  { label: "IAAI", href: "https://www.iaai.com", image: "/images/new_logo_iaai.svg", dark: true },
+  { label: "Manheim", href: "https://www.manheim.com", image: "/images/new-logo-manheim.svg", dark: true, invert: true },
+  { label: "AutoBidMaster", href: "https://www.autobidmaster.com", image: "/images/new-logo-bid.svg", dark: true },
 ];
 
 export function Footer({ lang = "bg" }: { lang?: string }) {
@@ -47,11 +47,11 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
           {/* Brand */}
           <div className="space-y-4">
             <Image
-              src="/images/logo.svg"
+              src="/images/logo-new1.webp"
               alt="Best Auto"
-              width={200}
-              height={40}
-              className="h-8 w-auto"
+              width={64}
+              height={64}
+              className="h-16 w-auto"
             />
             <p className="text-sm leading-relaxed text-gray-500">
               {t("description", lang)}
@@ -60,9 +60,9 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
 
           {/* Navigation */}
           <div>
-            <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
               {t("navHeader", lang)}
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
                 <li key={link.label}>
@@ -79,24 +79,29 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
 
           {/* Auctions */}
           <div>
-            <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
               {t("auctHeader", lang)}
-            </h4>
-            <div className="grid grid-cols-2 gap-2">
+            </h3>
+            <div className="flex flex-col gap-2.5">
               {auctionLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center rounded-lg border border-white/5 bg-white/5 p-3 transition-all hover:border-customYellow/30 hover:bg-white/10"
+                  className={
+                    link.dark
+                      ? "group flex h-14 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-white/[0.03] px-5 transition-all hover:border-white/20 hover:bg-white/[0.06]"
+                      : "group flex h-14 items-center justify-center overflow-hidden rounded-xl bg-white/90 px-5 transition-all hover:bg-white hover:shadow-lg hover:shadow-black/30"
+                  }
                 >
                   <Image
                     src={link.image}
                     alt={link.label}
-                    width={100}
-                    height={32}
-                    className="h-7 w-auto object-contain opacity-60 group-hover:opacity-100 transition-opacity"
+                    width={150}
+                    height={48}
+                    className="h-9 w-auto max-w-[150px] object-contain transition-transform duration-200 group-hover:scale-105"
+                    style={link.invert ? { filter: "brightness(0) invert(1)" } : undefined}
                   />
                 </a>
               ))}
@@ -105,14 +110,14 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
+            <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-gray-500">
               {t("contactHeader", lang)}
-            </h4>
+            </h3>
             <ul className="space-y-3">
               <li>
-                <a href="tel:+359885451689" className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white">
+                <a href="tel:+359877575257" className="flex items-center gap-2 text-sm text-gray-400 transition-colors hover:text-white">
                   <PhoneIcon className="h-4 w-4 shrink-0" />
-                  +359 885 451 689
+                  +359 877 575 257
                 </a>
               </li>
               <li>
@@ -125,14 +130,14 @@ export function Footer({ lang = "bg" }: { lang?: string }) {
               </li>
               <li className="flex gap-2 pt-1">
                 <a
-                  href="viber://chat?number=%2B359885451689"
+                  href="viber://chat?number=%2B359877575257"
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-purple-600/20 text-purple-400 transition-colors hover:bg-purple-600/30"
                   aria-label="Viber"
                 >
                   <ViberIcon className="h-4 w-4" />
                 </a>
                 <a
-                  href="https://t.me/+359885451689"
+                  href="https://t.me/+359877575257"
                   className="flex h-9 w-9 items-center justify-center rounded-lg bg-sky-500/20 text-sky-400 transition-colors hover:bg-sky-500/30"
                   aria-label="Telegram"
                 >

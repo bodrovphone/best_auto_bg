@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" role="img" aria-label="Best Auto logo">
+  <defs>
+    <filter id="carGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.18" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="borderGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#C41E3A" flood-opacity="0.3" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="redGlow"/>
+      <feMerge>
+        <feMergeNode in="redGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="textGlow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#C41E3A" flood-opacity="0.3" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4243F"/>
+      <stop offset="40%" stop-color="#8B0000"/>
+      <stop offset="60%" stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#D4243F"/>
+    </linearGradient>
+    <linearGradient id="carShine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e0e0e0"/>
+      <stop offset="100%" stop-color="#b0b0b0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Thick circular border with neon glow -->
+  <circle cx="150" cy="150" r="141" fill="none" stroke="url(#borderGrad)" stroke-width="7" filter="url(#borderGlow)"/>
+  <!-- Inner accent ring -->
+  <circle cx="150" cy="150" r="134" fill="none" stroke="#C41E3A" stroke-width="0.6" opacity="0.3"/>
+
+  <!-- Aggressive supercar silhouette -->
+  <g transform="translate(150, 115)" filter="url(#carGlow)">
+    <!-- Speed lines trailing behind car (to the left) -->
+    <line x1="-95" y1="-4" x2="-62" y2="-4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" opacity="0.3"/>
+    <line x1="-100" y1="4" x2="-58" y2="4" stroke="#fff" stroke-width="1.3" stroke-linecap="round" opacity="0.22"/>
+    <line x1="-92" y1="12" x2="-56" y2="12" stroke="#fff" stroke-width="1" stroke-linecap="round" opacity="0.15"/>
+    <line x1="-88" y1="-11" x2="-66" y2="-11" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.12"/>
+    <line x1="-85" y1="19" x2="-60" y2="19" stroke="#fff" stroke-width="0.7" stroke-linecap="round" opacity="0.1"/>
+
+    <!-- Main car body - aggressive supercar with spoiler -->
+    <path d="
+      M-52 24 L-48 12 L-46 6 L-42 -2 L-36 -10
+      L-28 -18 L-18 -24 L-6 -28 L8 -30
+      L22 -30 L34 -27 L44 -22 L50 -17
+      L54 -12 L58 -4 L62 4 L64 10 L64 16
+      L64 20 L62 24
+      L52 24
+      Q50 16 44 13 Q38 10 32 14 Q29 16 28 20 L26 24
+      L-14 24
+      Q-16 16 -22 13 Q-30 10 -35 14 Q-38 17 -40 24 Z
+    " fill="url(#carShine)"/>
+
+    <!-- Rear spoiler - distinctive supercar feature -->
+    <path d="M-52 -2 L-56 -8 L-54 -10 L-48 -8 L-44 -4" fill="#e8e8e8" stroke="#fff" stroke-width="0.4" opacity="0.9"/>
+    <line x1="-54" y1="-10" x2="-50" y2="-4" stroke="#ccc" stroke-width="0.6" opacity="0.6"/>
+
+    <!-- Roof line highlight - sharp angular -->
+    <path d="M-28 -18 L-18 -24 L-6 -28 L8 -30 L22 -30 L34 -27 L44 -22 L50 -17" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.55"/>
+
+    <!-- Windshield - angular, aggressive rake -->
+    <path d="
+      M-20 -16 L-2 -28 Q6 -30 16 -29.5 L32 -26
+      Q42 -22 48 -16 L50 -12
+      L-22 -10 Z
+    " fill="#111318" opacity="0.6"/>
+
+    <!-- Windshield frame highlight -->
+    <path d="M-20 -16 L-2 -28 Q6 -30 16 -29.5 L32 -26 Q42 -22 48 -16" fill="none" stroke="#fff" stroke-width="0.5" opacity="0.35"/>
+
+    <!-- Window divider pillar -->
+    <line x1="8" y1="-29" x2="2" y2="-10" stroke="#fff" stroke-width="0.6" opacity="0.3"/>
+
+    <!-- Rear wheel -->
+    <circle cx="-28" cy="24" r="12" fill="#0a0a0a"/>
+    <circle cx="-28" cy="24" r="9" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="0.5"/>
+    <circle cx="-28" cy="24" r="4" fill="#0e0e0e" stroke="#444" stroke-width="0.5"/>
+    <circle cx="-28" cy="24" r="1.5" fill="#333"/>
+
+    <!-- Front wheel -->
+    <circle cx="38" cy="24" r="12" fill="#0a0a0a"/>
+    <circle cx="38" cy="24" r="9" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="0.5"/>
+    <circle cx="38" cy="24" r="4" fill="#0e0e0e" stroke="#444" stroke-width="0.5"/>
+    <circle cx="38" cy="24" r="1.5" fill="#333"/>
+
+    <!-- Front air intake / bumper detail -->
+    <path d="M56 8 L62 8 L64 12 L60 14 L56 12 Z" fill="#1a1a1a" opacity="0.4"/>
+
+    <!-- Headlight - sharp angular -->
+    <path d="M60 2 L66 4 L66 10 L62 8 Z" fill="#ffffff" opacity="0.8"/>
+    <path d="M61 3 L65 5 L65 9 L63 7 Z" fill="#ffffdd" opacity="0.9"/>
+
+    <!-- Taillights - wide, aggressive -->
+    <path d="M-50 4 L-46 2 L-46 10 L-50 12 Z" fill="#C41E3A" opacity="0.9"/>
+    <path d="M-50 4 L-46 2 L-46 6 L-50 8 Z" fill="#ff3050" opacity="0.5"/>
+
+    <!-- Body crease / character line -->
+    <path d="M-46 6 Q-10 -2 20 -3 Q50 -4 62 4" fill="none" stroke="#fff" stroke-width="0.5" opacity="0.2"/>
+
+    <!-- Lower body line -->
+    <path d="M-48 16 Q-10 12 20 12 Q50 12 62 16" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.12"/>
+
+    <!-- Side scoop / vent -->
+    <path d="M-8 2 L2 0 L4 4 L-6 6 Z" fill="#1a1a1a" opacity="0.3"/>
+
+    <!-- Side mirror -->
+    <path d="M-14 -16 L-10 -18 L-8 -15 L-12 -14 Z" fill="#e0e0e0" opacity="0.5"/>
+  </g>
+
+  <!-- "BEST" text - heavy condensed bold, bordo red -->
+  <g filter="url(#textGlow)">
+    <text x="150" y="198" text-anchor="middle" fill="#C41E3A" font-family="'Impact', 'Arial Black', 'Helvetica Neue', sans-serif" font-size="52" font-weight="900" letter-spacing="6">BEST</text>
+  </g>
+
+  <!-- "Auto" text - italic, lighter, elegant white -->
+  <text x="150" y="234" text-anchor="middle" fill="#ffffff" font-family="'Georgia', 'Times New Roman', 'Palatino', serif" font-size="36" font-weight="400" font-style="italic" letter-spacing="4" opacity="0.92">Auto</text>
+
+  <!-- Thin decorative line separator -->
+  <line x1="80" y1="244" x2="220" y2="244" stroke="#C41E3A" stroke-width="0.8" opacity="0.3" stroke-linecap="round"/>
+
+  <!-- Tagline -->
+  <text x="150" y="260" text-anchor="middle" fill="#ffffff" opacity="0.25" font-family="Arial, Helvetica, sans-serif" font-size="9" letter-spacing="5" font-weight="300">USA &#x2192; BULGARIA</text>
+</svg>

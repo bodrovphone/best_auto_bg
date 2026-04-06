@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { ViberIcon, TelegramIcon, CheckCircleIcon } from "@/components/icons";
 
@@ -42,7 +43,46 @@ const services = [
   },
 ];
 
-export default function AboutPage() {
+type Props = { params: Promise<{ lang: string }> };
+
+const meta = {
+  bg: {
+    title: "За нас | Best Auto — Внос на автомобили от САЩ",
+    description: "Внос на коли от САЩ — аукцион, доставка, мито, ДДС и регистрация. Пълно обслужване от Best Auto.",
+  },
+  ru: {
+    title: "О нас | Best Auto — Импорт автомобилей из США",
+    description: "Импорт авто из США — аукцион, доставка, таможня, НДС и регистрация. Полный сервис от Best Auto.",
+  },
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { lang } = await params;
+  const m = meta[lang as keyof typeof meta] ?? meta.bg;
+  return {
+    title: m.title,
+    description: m.description,
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      locale: lang === "ru" ? "ru_RU" : "bg_BG",
+      type: "website",
+      siteName: "Best Auto",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: m.title,
+      description: m.description,
+    },
+    alternates: {
+      canonical: `/${lang}/about`,
+      languages: { bg: "/bg/about", ru: "/ru/about" },
+    },
+  };
+}
+
+export default async function AboutPage({ params }: Props) {
+  const { lang } = await params;
   return (
     <div className="min-h-screen bg-[#0F1515]">
       {/* Hero */}
@@ -202,14 +242,14 @@ export default function AboutPage() {
           </p>
           <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
             <a
-              href="viber://chat?number=%2B359885451689"
+              href="viber://chat?number=%2B359877575257"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90"
             >
               <ViberIcon className="h-5 w-5" />
               Пишете ни във Viber
             </a>
             <a
-              href="https://t.me/+359885451689"
+              href="https://t.me/+359877575257"
               className="inline-flex items-center justify-center gap-2 rounded-xl bg-sky-500 px-6 py-3 font-semibold text-white transition-opacity hover:opacity-90"
             >
               <TelegramIcon className="h-5 w-5" />

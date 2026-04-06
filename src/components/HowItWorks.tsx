@@ -366,12 +366,12 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Header */}
         <div className="mb-16 lg:mb-24 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#E1E100" }}>
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#ED7014" }}>
             {tr("badge", lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             {tr("headingPre", lang)}{" "}
-            <span className="italic" style={{ color: "#E1E100" }}>{tr("headingHL", lang)}</span>
+            <span className="italic" style={{ color: "#ED7014" }}>{tr("headingHL", lang)}</span>
           </h2>
           <p className="mt-5 text-gray-400 max-w-xl mx-auto text-base lg:text-lg leading-relaxed">
             {tr("subtext", lang)}
@@ -389,10 +389,10 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
             <path d={DESKTOP_ROAD_PATH} stroke="#1a2626" strokeWidth="10" strokeLinecap="round" fill="none" />
 
             {/* Yellow trail */}
-            <path d={DESKTOP_ROAD_PATH} stroke="#E1E100" strokeWidth="10" strokeLinecap="round" fill="none" opacity="0.35" className="dt-trail" />
+            <path d={DESKTOP_ROAD_PATH} stroke="#ED7014" strokeWidth="10" strokeLinecap="round" fill="none" opacity="0.35" className="dt-trail" />
 
             {/* Glow */}
-            <path d={DESKTOP_ROAD_PATH} stroke="#E1E100" strokeWidth="22" strokeLinecap="round" fill="none" opacity="0.08" className="dt-trail" style={{ filter: "blur(12px)" }} />
+            <path d={DESKTOP_ROAD_PATH} stroke="#ED7014" strokeWidth="22" strokeLinecap="round" fill="none" opacity="0.08" className="dt-trail" style={{ filter: "blur(12px)" }} />
 
             {/* Center dashes */}
             <path d={DESKTOP_ROAD_PATH} stroke="rgba(255,255,255,0.2)" strokeWidth="2" strokeLinecap="round" strokeDasharray="12 8" fill="none" />
@@ -403,15 +403,15 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
             {/* Milestone numbered circles on the road */}
             {desktopPositions.map((pos, i) => (
               <g key={i} style={{ transition: "opacity 0.6s ease-out, transform 0.5s cubic-bezier(0.34,1.56,0.64,1)", transitionDelay: `${i * 0.15}s`, opacity: visibleSteps.has(i) ? 1 : 0, transformOrigin: `${pos.cx}px ${pos.cy}px`, transform: visibleSteps.has(i) ? "scale(1)" : "scale(0)" }}>
-                <circle cx={pos.cx} cy={pos.cy} r="22" fill="#0F1515" stroke="#E1E100" strokeWidth="2" />
-                <text x={pos.cx} y={pos.cy} textAnchor="middle" dominantBaseline="central" fill="#E1E100" fontSize="14" fontWeight="bold" fontFamily="inherit">{i + 1}</text>
+                <circle cx={pos.cx} cy={pos.cy} r="22" fill="#0F1515" stroke="#ED7014" strokeWidth="2" />
+                <text x={pos.cx} y={pos.cy} textAnchor="middle" dominantBaseline="central" fill="#ED7014" fontSize="14" fontWeight="bold" fontFamily="inherit">{i + 1}</text>
               </g>
             ))}
 
             {/* Car */}
             {desktopCar && (
               <g transform={`translate(${desktopCar.x}, ${desktopCar.y}) rotate(${desktopCar.angle})`}>
-                <ellipse cx="0" cy="2" rx={CAR_W * 0.45} ry="8" fill="#E1E100" opacity="0.15" style={{ filter: "blur(6px)" }} />
+                <ellipse cx="0" cy="2" rx={CAR_W * 0.45} ry="8" fill="#ED7014" opacity="0.15" style={{ filter: "blur(6px)" }} />
                 <image href="/images/steps/car-moving.png" width={CAR_W} height={CAR_H} x={-CAR_W / 2} y={-CAR_H / 2} />
               </g>
             )}
@@ -444,13 +444,13 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
                     </div>
                   ) : (
                     <div className="w-full h-[160px] flex items-center justify-center" style={{ backgroundColor: "rgba(225,225,0,0.04)" }}>
-                      <step.icon className="w-14 h-14" style={{ color: "#E1E100", opacity: 0.3 }} />
+                      <step.icon className="w-14 h-14" style={{ color: "#ED7014", opacity: 0.3 }} />
                     </div>
                   )}
                   {/* Content */}
                   <div className="px-5 py-5">
                     <div className="flex items-center gap-2.5 mb-2">
-                      <step.icon className="w-5 h-5 shrink-0" style={{ color: "#E1E100" }} />
+                      <step.icon className="w-5 h-5 shrink-0" style={{ color: "#ED7014" }} />
                       <h3 className="text-white font-semibold text-base">{loc(step.title, lang)}</h3>
                     </div>
                     <p className="text-gray-400 text-sm leading-relaxed mb-4">{loc(step.description, lang)}</p>
@@ -458,14 +458,14 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
                       {step.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-xs text-gray-400">
                           <span className="mt-0.5 shrink-0 w-3.5 h-3.5 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(225,225,0,0.12)" }}>
-                            <span style={{ width: 5, height: 5, borderRadius: "50%", backgroundColor: "#E1E100", display: "block" }} />
+                            <span style={{ width: 5, height: 5, borderRadius: "50%", backgroundColor: "#ED7014", display: "block" }} />
                           </span>
                           {loc(b, lang)}
                         </li>
                       ))}
                     </ul>
                     <div className="mt-4 pt-3 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                      <span className="text-xs font-medium" style={{ color: "#E1E100", opacity: 0.7 }}>{loc(step.duration, lang)}</span>
+                      <span className="text-xs font-medium" style={{ color: "#ED7014", opacity: 0.7 }}>{loc(step.duration, lang)}</span>
                     </div>
                   </div>
                 </div>
@@ -480,9 +480,9 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
             {/* Road base */}
             <path d={MOBILE_ROAD_PATH} stroke="#1a2626" strokeWidth="6" strokeLinecap="round" fill="none" />
             {/* Yellow trail */}
-            <path d={MOBILE_ROAD_PATH} stroke="#E1E100" strokeWidth="6" strokeLinecap="round" fill="none" opacity="0.3" className="mb-trail" />
+            <path d={MOBILE_ROAD_PATH} stroke="#ED7014" strokeWidth="6" strokeLinecap="round" fill="none" opacity="0.3" className="mb-trail" />
             {/* Glow */}
-            <path d={MOBILE_ROAD_PATH} stroke="#E1E100" strokeWidth="14" strokeLinecap="round" fill="none" className="mb-trail" opacity="0.06" style={{ filter: "blur(8px)" }} />
+            <path d={MOBILE_ROAD_PATH} stroke="#ED7014" strokeWidth="14" strokeLinecap="round" fill="none" className="mb-trail" opacity="0.06" style={{ filter: "blur(8px)" }} />
             {/* Center dashes */}
             <path d={MOBILE_ROAD_PATH} stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="8 6" fill="none" />
             {/* Hidden measurement path */}
@@ -512,7 +512,7 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
                 className={`step-node flex items-start gap-4 pl-14 pr-2 ${visibleSteps.has(i) ? "step-visible" : ""}`}
                 style={{ transitionDelay: `${i * 0.12}s` }}
               >
-                <div className="milestone-circle absolute w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-bold z-10" style={{ left: "10px", borderColor: "#E1E100", backgroundColor: "#0F1515", color: "#E1E100", transitionDelay: `${i * 0.12 + 0.1}s` }}>
+                <div className="milestone-circle absolute w-10 h-10 rounded-full border-2 flex items-center justify-center text-xs font-bold z-10" style={{ left: "10px", borderColor: "#ED7014", backgroundColor: "#0F1515", color: "#ED7014", transitionDelay: `${i * 0.12 + 0.1}s` }}>
                   {step.number}
                 </div>
                 <div className="step-card rounded-xl border overflow-hidden flex-1" style={{ backgroundColor: "rgba(20, 30, 30, 0.85)", borderColor: "rgba(255,255,255,0.06)" }}>
@@ -523,12 +523,12 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
                     </div>
                   ) : (
                     <div className="w-full h-[130px] flex items-center justify-center" style={{ backgroundColor: "rgba(225,225,0,0.04)" }}>
-                      <step.icon className="w-12 h-12" style={{ color: "#E1E100", opacity: 0.3 }} />
+                      <step.icon className="w-12 h-12" style={{ color: "#ED7014", opacity: 0.3 }} />
                     </div>
                   )}
                   <div className="px-4 py-4">
                     <div className="flex items-center gap-2 mb-2">
-                      <step.icon className="w-4 h-4 shrink-0" style={{ color: "#E1E100" }} />
+                      <step.icon className="w-4 h-4 shrink-0" style={{ color: "#ED7014" }} />
                       <h3 className="text-white font-semibold text-sm">{loc(step.title, lang)}</h3>
                     </div>
                     <p className="text-gray-400 text-xs leading-relaxed mb-3">{loc(step.description, lang)}</p>
@@ -536,14 +536,14 @@ export function HowItWorks({ lang = "bg" }: { lang?: string }) {
                       {step.bullets.map((b, bi) => (
                         <li key={bi} className="flex items-start gap-2 text-xs text-gray-500">
                           <span className="mt-0.5 shrink-0 w-3 h-3 rounded-full flex items-center justify-center" style={{ backgroundColor: "rgba(225,225,0,0.1)" }}>
-                            <span style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#E1E100", display: "block" }} />
+                            <span style={{ width: 4, height: 4, borderRadius: "50%", backgroundColor: "#ED7014", display: "block" }} />
                           </span>
                           {loc(b, lang)}
                         </li>
                       ))}
                     </ul>
                     <div className="mt-3 pt-2.5 border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                      <span className="text-xs font-medium" style={{ color: "#E1E100", opacity: 0.7 }}>{loc(step.duration, lang)}</span>
+                      <span className="text-xs font-medium" style={{ color: "#ED7014", opacity: 0.7 }}>{loc(step.duration, lang)}</span>
                     </div>
                   </div>
                 </div>

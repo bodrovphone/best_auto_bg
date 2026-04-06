@@ -54,7 +54,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [value]);
 
   return (
-    <div ref={ref} className="text-4xl sm:text-5xl font-bold leading-none" style={{ color: "#E1E100" }}>
+    <div ref={ref} className="text-4xl sm:text-5xl font-bold leading-none" style={{ color: "#ED7014" }}>
       {display}
       <span className="text-2xl sm:text-3xl">{suffix}</span>
     </div>
@@ -71,19 +71,19 @@ export function StatsSection({ lang = "bg" }: { lang?: string }) {
 
   return (
     <section
-      id="testimonials"
+      id="stats"
       className="py-20 lg:py-28"
       style={{ backgroundColor: "#0F1515" }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Header */}
         <div className="mb-14 text-center">
-          <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#E1E100" }}>
+          <span className="inline-block text-xs font-bold uppercase tracking-[0.25em] mb-4" style={{ color: "#ED7014" }}>
             {t("badge", lang)}
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
             {t("heading1", lang)}{" "}
-            <span className="italic" style={{ color: "#E1E100" }}>{t("headingHL", lang)}</span>
+            <span className="italic" style={{ color: "#ED7014" }}>{t("headingHL", lang)}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-base lg:text-lg text-gray-400 leading-relaxed">
             {t("subtext", lang)}
@@ -95,7 +95,7 @@ export function StatsSection({ lang = "bg" }: { lang?: string }) {
           {stats.map((stat) => (
             <div
               key={stat.labelKey}
-              className="group rounded-2xl border p-6 sm:p-8 text-center transition-all duration-300 hover:border-[#E1E100]/40"
+              className="group rounded-2xl border p-6 sm:p-8 text-center transition-all duration-300 hover:border-[#ED7014]/40"
               style={{
                 borderColor: "rgba(255,255,255,0.06)",
                 backgroundColor: "rgba(20, 30, 30, 0.6)",

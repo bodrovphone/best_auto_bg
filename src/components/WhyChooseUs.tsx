@@ -53,8 +53,8 @@ export function WhyChooseUs({ lang = "bg" }: { lang?: string }) {
               key={feature.titleKey}
               className="rounded-xl border border-gray-700/50 bg-transparent p-8 text-left"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#E1E100]/10">
-                <feature.icon className="h-6 w-6 text-[#E1E100]" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#ED7014]/10">
+                <feature.icon className="h-6 w-6 text-[#ED7014]" />
               </div>
               <h3 className="mt-4 text-[20px] font-bold text-white">
                 {t(feature.titleKey, lang)}

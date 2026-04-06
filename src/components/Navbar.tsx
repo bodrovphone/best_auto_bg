@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import {
@@ -50,7 +50,7 @@ function tr(key: TxKey, lang: string): string {
 
 function getNavLinks(lang: string): NavLink[] {
   return [
-    { label: tr("home", lang), href: "#", active: true },
+    { label: tr("home", lang), href: "/", active: true },
     { label: tr("howItWorks", lang), href: "#how-it-works" },
     { label: tr("lots", lang), href: "#offers" },
     {
@@ -232,20 +232,10 @@ export function Navbar() {
   const lang = (params?.lang as string) ?? "bg";
   const prefix = `/${lang}`;
   const navLinks = getNavLinks(lang);
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 50);
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
 
   useEffect(() => {
     if (mobileOpen) {
@@ -273,13 +263,7 @@ export function Navbar() {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/90 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
-    >
+    <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-lg">
       {/* Top info bar - hidden on mobile */}
       <div className="hidden lg:block border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-8">
@@ -288,15 +272,9 @@ export function Navbar() {
             <span>{tr("workHours", lang)}</span>
           </div>
           <div className="flex items-center gap-4 text-xs text-gray-400">
-            <a href="tel:+359885451689" className="flex items-center gap-1.5 hover:text-white transition-colors">
+            <a href="tel:+359877575257" className="flex items-center gap-1.5 hover:text-white transition-colors">
               <PhoneIcon className="h-3.5 w-3.5" />
-              <span>{tr("phone", lang)} +359 885 451 689</span>
-            </a>
-            <a href="viber://chat?number=%2B359885451689" className="hover:text-white transition-colors" aria-label="Viber">
-              <ViberIcon className="h-4 w-4" />
-            </a>
-            <a href="https://t.me/+359885451689" className="hover:text-white transition-colors" aria-label="Telegram">
-              <TelegramIcon className="h-4 w-4" />
+              <span>{tr("phone", lang)} +359 877 575 257</span>
             </a>
             <div
               className="relative"
@@ -316,7 +294,7 @@ export function Navbar() {
                     <a
                       key={l.code}
                       href={`/${l.code}`}
-                      className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#E1E100] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
+                      className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#ED7014] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
                     >
                       {l.label}
                     </a>
@@ -333,11 +311,11 @@ export function Navbar() {
         {/* Logo */}
         <a href={`${prefix}/`} className="flex-shrink-0">
           <Image
-            src="/images/logo.svg"
+            src="/images/logo-new1.webp"
             alt="Best Auto"
-            width={280}
-            height={50}
-            className="h-8 lg:h-10 w-auto"
+            width={56}
+            height={56}
+            className="h-12 lg:h-14 w-auto"
           />
         </a>
 
@@ -357,7 +335,7 @@ export function Navbar() {
                 className={`flex items-center gap-1 px-3 py-2 text-sm transition-colors relative ${
                   link.active
                     ? "text-white font-bold"
-                    : "text-gray-300 hover:text-[#E1E100]"
+                    : "text-gray-300 hover:text-[#ED7014]"
                 }`}
               >
                 {link.label}
@@ -369,7 +347,7 @@ export function Navbar() {
                   />
                 )}
                 {link.active && (
-                  <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#E1E100] rounded-full" />
+                  <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-[#ED7014] rounded-full" />
                 )}
               </a>
               {link.dropdown && (
@@ -383,30 +361,20 @@ export function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <a
-            href="viber://chat?number=%2B359885451689"
-            className={`hidden sm:inline-flex items-center gap-2 text-sm font-semibold rounded-full px-4 py-2.5 transition-all duration-300 ${
-              scrolled
-                ? "bg-purple-600 text-white hover:opacity-90"
-                : "bg-white/10 text-white border border-white/30 hover:bg-white/20"
-            }`}
+            href="viber://chat?number=%2B359877575257"
+            className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-purple-400 hover:bg-white/10 transition-all"
             aria-label="Viber"
           >
             <ViberIcon className="h-5 w-5" />
-            Viber
           </a>
           <a
-            href="https://t.me/+359885451689"
-            className={`hidden sm:inline-flex items-center gap-2 text-sm font-semibold rounded-full px-4 py-2.5 transition-all duration-300 ${
-              scrolled
-                ? "bg-sky-500 text-white hover:opacity-90"
-                : "bg-white/10 text-white border border-white/30 hover:bg-white/20"
-            }`}
+            href="https://t.me/+359877575257"
+            className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-sky-400 hover:bg-white/10 transition-all"
             aria-label="Telegram"
           >
             <TelegramIcon className="h-5 w-5" />
-            Telegram
           </a>
 
           {/* Mobile menu button */}
@@ -434,7 +402,7 @@ export function Navbar() {
                     href={link.href.startsWith("/") ? `${prefix}${link.href}` : link.href.startsWith("#") ? `${prefix}/${link.href}` : link.href}
                     className={`flex-1 py-3 px-4 text-lg rounded-lg transition-colors ${
                       link.active
-                        ? "text-[#E1E100] font-bold bg-white/5"
+                        ? "text-[#ED7014] font-bold bg-white/5"
                         : "text-white hover:bg-white/5"
                     }`}
                     onClick={
@@ -472,23 +440,23 @@ export function Navbar() {
             ))}
             <div className="mt-4 pt-4 border-t border-white/10">
               <a
-                href="tel:+359885451689"
+                href="tel:+359877575257"
                 className="flex items-center gap-2 text-gray-400 py-2"
               >
                 <PhoneIcon className="h-4 w-4" />
-                +359 885 451 689
+                +359 877 575 257
               </a>
             </div>
             <div className="mt-4 flex gap-3">
               <a
-                href="viber://chat?number=%2B359885451689"
+                href="viber://chat?number=%2B359877575257"
                 className="flex-1 inline-flex items-center justify-center gap-2 bg-purple-600 text-white font-semibold rounded-full px-6 py-3"
               >
                 <ViberIcon className="h-5 w-5" />
                 Viber
               </a>
               <a
-                href="https://t.me/+359885451689"
+                href="https://t.me/+359877575257"
                 className="flex-1 inline-flex items-center justify-center gap-2 bg-sky-500 text-white font-semibold rounded-full px-6 py-3"
               >
                 <TelegramIcon className="h-5 w-5" />

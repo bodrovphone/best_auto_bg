@@ -3,14 +3,14 @@ import { CheckCircleIcon } from "@/components/icons";
 
 const tx = {
   heroTitle1:    { bg: "ВНОС НА АВТОМОБИЛИ",   ru: "ИМПОРТ АВТОМОБИЛЕЙ" },
-  heroTitle2:    { bg: "ДИРЕКТНО ОТ САЩ",       ru: "НАПРЯМУЮ ИЗ США" },
-  heroDesc:      { bg: "Спечелете аукцион на Copart или IAAI и ние се грижим за всичко останало — доставка, мито, ДДС и регистрация в КАТ.", ru: "Выиграйте аукцион на Copart или IAAI, а мы позаботимся обо всем остальном — доставка, таможня, НДС и регистрация." },
+  heroTitle2:    { bg: "ДИРЕКТНО ОТ САЩ, КАНАДА И ЕВРОПА", ru: "НАПРЯМУЮ ИЗ США, КАНАДЫ И ЕВРОПЫ" },
+  heroDesc:      { bg: "Печелим аукцион на Copart, IAAI, ADESA и Manheim и се грижим за всичко останало — доставка, мито, ДДС и регистрация в КАТ.", ru: "Выигрываем аукционы на Copart, IAAI, ADESA и Manheim и берём на себя всё остальное — доставка, таможня, НДС и регистрация." },
   viewLots:      { bg: "Разгледай лотовете",    ru: "Смотреть лоты" },
   howWorks:      { bg: "Как работи?",            ru: "Как это работает?" },
   whyTitle:      { bg: "Защо",                   ru: "Почему" },
   whySub:        { bg: "Вашият надежден партньор за внос от американски аукциони", ru: "Ваш надежный партнер по импорту с американских аукционов" },
   ctaBtn:        { bg: "Получете безплатна консултация", ru: "Получите бесплатную консультацию" },
-  benefit1:      { bg: "Директен внос от Copart, IAAI и Manheim",       ru: "Прямой импорт с Copart, IAAI и Manheim" },
+  benefit1:      { bg: "Директен внос от Copart, IAAI, ADESA и Manheim", ru: "Прямой импорт с Copart, IAAI, ADESA и Manheim" },
   benefit2:      { bg: "Пълно митническо и ДДС оформяне",               ru: "Полное таможенное оформление и НДС" },
   benefit3:      { bg: "Доставка от САЩ до вас за 5–6 седмици",         ru: "Доставка из США к вам за 5–6 недель" },
   benefit4:      { bg: "Над 900 доволни клиенти от цяла България",      ru: "Более 900 довольных клиентов по всей Болгарии" },
@@ -30,10 +30,10 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
   ];
 
   return (
-    <section className="relative min-h-[736px] w-full overflow-hidden">
+    <section className="relative min-h-[736px] w-full overflow-hidden bg-black">
       {/* Background image */}
       <Image
-        src="/assets/images/pexels-miguel-mallari-3716324-5549657.jpg"
+        src="/assets/images/pexels-matreding-12777409.jpg"
         alt=""
         fill
         priority
@@ -41,8 +41,8 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
         sizes="100vw"
       />
 
-      {/* Dark gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/55 to-black/30" />
+      {/* Left-side dark fade so text stays readable */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-[736px] max-w-7xl items-center px-4 pt-32 pb-12 lg:pt-32">
@@ -54,7 +54,7 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
               <span className="block text-[32px] font-medium leading-tight text-white md:text-[42px] lg:text-[56px]">
                 {t("heroTitle1", lang)}
               </span>
-              <span className="block bg-gradient-to-r from-[#E1E100] to-amber-400 bg-clip-text text-[32px] font-bold leading-tight text-transparent md:text-[42px] lg:text-[56px]">
+              <span className="block bg-gradient-to-r from-[#ED7014] to-[#FC6A03] bg-clip-text text-[26px] font-bold leading-tight text-transparent md:text-[36px] lg:text-[48px]">
                 {t("heroTitle2", lang)}
               </span>
             </h1>
@@ -66,7 +66,7 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#offers"
-                className="inline-flex items-center justify-center rounded-lg bg-[#E1E100] px-6 py-3 font-semibold text-black transition-opacity hover:opacity-90"
+                className="inline-flex items-center justify-center rounded-lg bg-[#ED7014] px-6 py-3 font-semibold text-black transition-opacity hover:opacity-90"
               >
                 {t("viewLots", lang)}
               </a>
@@ -84,7 +84,7 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
             <div className="w-full max-w-md rounded-2xl border border-white/10 bg-black/40 p-7 backdrop-blur-md">
               <h2 className="text-xl font-bold text-white">
                 {t("whyTitle", lang)}{" "}
-                <span className="text-[#E1E100]">Best Auto?</span>
+                <span className="text-[#ED7014]">Best Auto?</span>
               </h2>
               <p className="mt-1 text-sm text-gray-400">
                 {t("whySub", lang)}
@@ -93,15 +93,15 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
               <ul className="mt-6 flex flex-col gap-4">
                 {benefits.map((b) => (
                   <li key={b} className="flex items-start gap-3">
-                    <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#E1E100]" />
+                    <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#ED7014]" />
                     <span className="text-sm text-gray-200">{b}</span>
                   </li>
                 ))}
               </ul>
 
               <a
-                href="viber://chat?number=%2B359885451689"
-                className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#E1E100] px-6 py-3 font-semibold text-black transition-opacity hover:opacity-90"
+                href="viber://chat?number=%2B359877575257"
+                className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#ED7014] px-6 py-3 font-semibold text-black transition-opacity hover:opacity-90"
               >
                 {t("ctaBtn", lang)}
               </a>
