@@ -36,7 +36,7 @@ const auctionLinks: { label: string; href: string; image: string; dark?: boolean
 ];
 
 export function Footer({ lang = "bg" }: { lang?: string }) {
-  const prefix = `/${lang}`;
+  const prefix = lang === "bg" ? "" : `/${lang}`;
   const navLinks = getNavLinks(lang);
 
   return (

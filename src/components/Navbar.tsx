@@ -230,7 +230,7 @@ function MobileDropdown({
 export function Navbar() {
   const params = useParams();
   const lang = (params?.lang as string) ?? "bg";
-  const prefix = `/${lang}`;
+  const prefix = lang === "bg" ? "" : `/${lang}`;
   const navLinks = getNavLinks(lang);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -293,7 +293,7 @@ export function Navbar() {
                   ].map((l) => (
                     <a
                       key={l.code}
-                      href={`/${l.code}`}
+                      href={l.code === "bg" ? "/" : `/${l.code}`}
                       className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#ED7014] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
                     >
                       {l.label}

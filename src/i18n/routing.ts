@@ -3,7 +3,11 @@ import { defineRouting } from 'next-intl/routing';
 export const routing = defineRouting({
   locales: ['bg', 'ru'],
   defaultLocale: 'bg',
-  localePrefix: 'always',
+  // 'as-needed' = default locale (bg) has no URL prefix, others do (e.g. /ru).
+  // TODO: verify in prod that /about and other top-level routes still resolve correctly.
+  // Caveat: never create a top-level folder named `bg` or `ru` under src/app/ — it would
+  // collide with the locale namespace. All pages must live under src/app/[lang]/.
+  localePrefix: 'as-needed',
   localeDetection: true,
   localeCookie: {
     name: 'preferred-language',
