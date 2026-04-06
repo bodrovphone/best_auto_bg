@@ -303,6 +303,11 @@ export function Navbar() {
                     <a
                       key={l.code}
                       href={switchLocaleHref(l.code)}
+                      onClick={() => {
+                        // Persist the explicit choice so middleware's localeDetection
+                        // doesn't bounce us back to the previous locale on the next request.
+                        document.cookie = `preferred-language=${l.code}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+                      }}
                       className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#ED7014] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
                     >
                       {l.label}
