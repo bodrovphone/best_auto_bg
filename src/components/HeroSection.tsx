@@ -33,7 +33,7 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
     <section className="relative min-h-[736px] w-full overflow-hidden bg-black">
       {/* Background image */}
       <Image
-        src="/assets/images/pexels-matreding-12777409.jpg"
+        src="/assets/images/flag.jpg"
         alt=""
         fill
         priority
