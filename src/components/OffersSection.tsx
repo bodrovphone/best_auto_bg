@@ -1,49 +1,49 @@
 import Image from "next/image";
 
-const titleTypeLabels: Record<string, { bg: string; ru: string }> = {
-  "CLEAN TITLE":   { bg: "Чист документ",  ru: "Чистый документ" },
-  "SALVAGE TITLE": { bg: "Тотална щета",   ru: "Тотальный ущерб" },
-  "REBUILT TITLE":  { bg: "Възстановен",    ru: "Восстановлен" },
+const titleTypeLabels: Record<string, { bg: string; ru: string; en?: string }> = {
+  "CLEAN TITLE":   { bg: "Чист документ",  ru: "Чистый документ", en: "Clean Title" },
+  "SALVAGE TITLE": { bg: "Тотална щета",   ru: "Тотальный ущерб",  en: "Salvage Title" },
+  "REBUILT TITLE":  { bg: "Възстановен",    ru: "Восстановлен",     en: "Rebuilt Title" },
 };
 
-const damageLabels: Record<string, { bg: string; ru: string }> = {
-  "MINOR DENT/SCRATCHES": { bg: "Малки вдлъбнатини",    ru: "Небольшие вмятины" },
-  "NORMAL WEAR":          { bg: "Нормално износване",   ru: "Нормальный износ" },
-  "FRONT END":            { bg: "Предна част",          ru: "Передняя часть" },
-  "REAR END":             { bg: "Задна част",           ru: "Задняя часть" },
-  "ALL OVER":             { bg: "Цялостни щети",        ru: "Повреждения повсюду" },
-  "HAIL":                 { bg: "Градушка",             ru: "Град" },
-  "WATER/FLOOD":          { bg: "Вода/наводнение",      ru: "Вода/затопление" },
-  "MECHANICAL":           { bg: "Механична повреда",    ru: "Механическое повреждение" },
+const damageLabels: Record<string, { bg: string; ru: string; en?: string }> = {
+  "MINOR DENT/SCRATCHES": { bg: "Малки вдлъбнатини",    ru: "Небольшие вмятины",            en: "Minor Dent/Scratches" },
+  "NORMAL WEAR":          { bg: "Нормално износване",   ru: "Нормальный износ",             en: "Normal Wear" },
+  "FRONT END":            { bg: "Предна част",          ru: "Передняя часть",               en: "Front End" },
+  "REAR END":             { bg: "Задна част",           ru: "Задняя часть",                 en: "Rear End" },
+  "ALL OVER":             { bg: "Цялостни щети",        ru: "Повреждения повсюду",          en: "All Over" },
+  "HAIL":                 { bg: "Градушка",             ru: "Град",                         en: "Hail" },
+  "WATER/FLOOD":          { bg: "Вода/наводнение",      ru: "Вода/затопление",              en: "Water/Flood" },
+  "MECHANICAL":           { bg: "Механична повреда",    ru: "Механическое повреждение",     en: "Mechanical" },
 };
 
 const tx = {
-  badge:       { bg: "Copart Аукцион",     ru: "Аукцион Copart" },
-  heading:     { bg: "Последни Лотове",    ru: "Последние лоты" },
-  subtext:     { bg: "Реални лотове, спечелени и внасяни в момента. Свържете се с нас за детайли.", ru: "Реальные лоты, выигранные и импортируемые прямо сейчас. Свяжитесь с нами для подробностей." },
-  viewAll:     { bg: "Виж всички",         ru: "Смотреть все" },
-  auction:     { bg: "Търг:",              ru: "Торги:" },
-  damage:      { bg: "Щета:",             ru: "Ущерб:" },
-  expectedBid: { bg: "Очакван търг",      ru: "Ожидаемая ставка" },
-  priceBG:     { bg: "~цена в БГ",        ru: "~цена в БГ" },
-  disclaimer:  { bg: `* Приблизителни цени. „Очакван търг“ е оценка базирана на исторически данни. „~цена в БГ“ включва доставка, мито и ДДС.`, ru: `* Приблизительные цены. „Ожидаемая ставка“ основана на исторических данных. „~цена в БГ“ включает доставку, пошлину и НДС.` },
+  badge:       { bg: "Copart Аукцион",     ru: "Аукцион Copart",    en: "Copart Auction" },
+  heading:     { bg: "Последни Лотове",    ru: "Последние лоты",    en: "Latest Lots" },
+  subtext:     { bg: "Реални лотове, спечелени и внасяни в момента. Свържете се с нас за детайли.", ru: "Реальные лоты, выигранные и импортируемые прямо сейчас. Свяжитесь с нами для подробностей.", en: "Real lots, won and currently being imported. Contact us for details." },
+  viewAll:     { bg: "Виж всички",         ru: "Смотреть все",      en: "View all" },
+  auction:     { bg: "Търг:",              ru: "Торги:",            en: "Auction:" },
+  damage:      { bg: "Щета:",             ru: "Ущерб:",            en: "Damage:" },
+  expectedBid: { bg: "Очакван търг",      ru: "Ожидаемая ставка",  en: "Expected Bid" },
+  priceBG:     { bg: "~цена в БГ",        ru: "~цена в БГ",        en: "~price in BG" },
+  disclaimer:  { bg: `* Приблизителни цени. „Очакван търг" е оценка базирана на исторически данни. „~цена в БГ" включва доставка, мито и ДДС.`, ru: `* Приблизительные цены. „Ожидаемая ставка" основана на исторических данных. „~цена в БГ" включает доставку, пошлину и НДС.`, en: `* Approximate prices. "Expected Bid" is an estimate based on historical data. "~price in BG" includes shipping, customs, and VAT.` },
 } as const;
 
 type TxKey = keyof typeof tx;
 function t(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 function translateDamage(raw: string, lang: string): string {
   const entry = damageLabels[raw];
   if (!entry) return raw;
-  return entry[lang as "bg" | "ru"] ?? entry.bg;
+  return entry[lang as "bg" | "ru" | "en"] ?? entry.bg;
 }
 
 function translateTitleType(raw: string, lang: string): string {
   const entry = titleTypeLabels[raw];
   if (!entry) return raw;
-  return entry[lang as "bg" | "ru"] ?? entry.bg;
+  return entry[lang as "bg" | "ru" | "en"] ?? entry.bg;
 }
 
 /** Returns a date string YYYY-MM-DD that is `days` days from today */

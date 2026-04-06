@@ -5,7 +5,6 @@ import { useParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import {
   PhoneIcon,
-  GlobeIcon,
   MenuIcon,
   XIcon,
   ViberIcon,
@@ -35,20 +34,18 @@ interface NavLink {
 }
 
 const tx = {
-  home:       { bg: "Начало",           ru: "Главная" },
-  howItWorks: { bg: "Как работи",       ru: "Как это работает" },
-  lots:       { bg: "Последни лотове",  ru: "Последние лоты" },
-  auctions:   { bg: "Аукциони",         ru: "Аукционы" },
-  calculator: { bg: "Калкулатор",       ru: "Калькулятор" },
-  reviews:    { bg: "Отзиви",           ru: "Отзывы" },
-  about:      { bg: "За нас",           ru: "О нас" },
-  workHours:  { bg: "Работно време: Пон.- Нед. 10:00-20:00", ru: "Рабочее время: Пн.- Вс. 10:00-20:00" },
-  phone:      { bg: "Телефон:",         ru: "Телефон:" },
+  home:       { bg: "Начало",           ru: "Главная",            en: "Home" },
+  howItWorks: { bg: "Как работи",       ru: "Как это работает",   en: "How It Works" },
+  lots:       { bg: "Последни лотове",  ru: "Последние лоты",     en: "Latest Lots" },
+  auctions:   { bg: "Аукциони",         ru: "Аукционы",           en: "Auctions" },
+  calculator: { bg: "Калкулатор",       ru: "Калькулятор",        en: "Calculator" },
+  reviews:    { bg: "Отзиви",           ru: "Отзывы",             en: "Reviews" },
+  about:      { bg: "За нас",           ru: "О нас",              en: "About Us" },
 } as const;
 
 type TxKey = keyof typeof tx;
 function tr(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 function getNavLinks(lang: string): NavLink[] {
@@ -157,6 +154,55 @@ function DesktopDropdown({
   );
 }
 
+function LanguagePicker({
+  current,
+  switchHref,
+  size = "sm",
+}: {
+  current: string;
+  switchHref: (code: string) => string;
+  size?: "sm" | "lg";
+}) {
+  const langs = [
+    { code: "bg", short: "БГ", full: "Български" },
+    { code: "ru", short: "РУ", full: "Русский" },
+    { code: "en", short: "EN", full: "English" },
+  ];
+  const setCookieAndGo = (code: string) => {
+    document.cookie = `preferred-language=${code}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+  };
+  const sizeCls =
+    size === "lg"
+      ? "h-11 px-4 text-sm"
+      : "h-9 px-3 text-xs";
+  return (
+    <div
+      className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1"
+      role="group"
+      aria-label="Language"
+    >
+      {langs.map((l) => {
+        const active = current === l.code;
+        return (
+          <a
+            key={l.code}
+            href={switchHref(l.code)}
+            onClick={() => setCookieAndGo(l.code)}
+            aria-current={active ? "true" : undefined}
+            className={`inline-flex items-center justify-center rounded-full font-semibold transition-colors ${sizeCls} ${
+              active
+                ? "bg-customYellow text-black"
+                : "text-gray-300 hover:bg-white/10 hover:text-white"
+            }`}
+          >
+            {size === "lg" ? l.full : l.short}
+          </a>
+        );
+      })}
+    </div>
+  );
+}
+
 function MobileDropdown({
   groups,
   open,
@@ -240,11 +286,11 @@ export function Navbar() {
   const prefix = lang === "bg" ? "" : `/${lang}`;
   const navLinks = getNavLinks(lang);
 
-  // Build the equivalent URL on the other locale, preserving the current path.
-  // bg is the default → no prefix; ru → /ru prefix.
+  // Build the equivalent URL for another locale, preserving the current path.
+  // bg is the default → no prefix; ru/en → /<locale> prefix.
   const switchLocaleHref = (target: string) => {
     // Strip any leading locale segment from current pathname
-    const stripped = pathname.replace(/^\/(bg|ru)(?=\/|$)/, "") || "/";
+    const stripped = pathname.replace(/^\/(bg|ru|en)(?=\/|$)/, "") || "/";
     return target === "bg" ? stripped : `/${target}${stripped === "/" ? "" : stripped}`;
   };
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -280,64 +326,20 @@ export function Navbar() {
   return (
     <>
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-lg">
-      {/* Top info bar - hidden on mobile */}
-      <div className="hidden lg:block border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-8">
-          <div className="flex items-center gap-2 text-xs text-gray-400">
-            <GlobeIcon className="h-4 w-4" />
-            <span>{tr("workHours", lang)}</span>
-          </div>
-          <div className="flex items-center gap-4 text-xs text-gray-400">
-            <a href="tel:+359877575257" className="flex items-center gap-1.5 hover:text-white transition-colors">
-              <PhoneIcon className="h-3.5 w-3.5" />
-              <span>{tr("phone", lang)} +359 877 575 257</span>
-            </a>
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("__lang__")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="flex items-center gap-1 hover:text-white transition-colors">
-                <span>{lang === "ru" ? "РУ" : "БГ"}</span>
-                <ChevronDownIcon className={`h-3 w-3 transition-transform duration-200 ${openDropdown === "__lang__" ? "rotate-180" : ""}`} />
-              </button>
-              <div className={`absolute right-0 top-full pt-1 z-50 transition-all duration-200 ${openDropdown === "__lang__" ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"}`}>
-                <div className="rounded-lg border border-white/10 bg-gray-900/95 backdrop-blur-xl shadow-2xl overflow-hidden min-w-[100px]">
-                  {[
-                    { code: "bg", label: "Български" },
-                    { code: "ru", label: "Русский" },
-                  ].map((l) => (
-                    <a
-                      key={l.code}
-                      href={switchLocaleHref(l.code)}
-                      onClick={() => {
-                        // Persist the explicit choice so middleware's localeDetection
-                        // doesn't bounce us back to the previous locale on the next request.
-                        document.cookie = `preferred-language=${l.code}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
-                      }}
-                      className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#ED7014] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
-                    >
-                      {l.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16 lg:h-20">
-        {/* Logo */}
-        <a href={`${prefix}/`} className="flex-shrink-0">
+      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-20 lg:h-24">
+        {/* Logo + brand name */}
+        <a href={`${prefix}/`} className="flex flex-shrink-0 items-center gap-3">
           <Image
             src="/images/logo-new1.webp"
             alt="Best Auto"
-            width={56}
-            height={56}
-            className="h-12 lg:h-14 w-auto"
+            width={96}
+            height={96}
+            className="h-16 lg:h-[88px] w-auto"
           />
+          <span className="hidden text-xl font-bold uppercase tracking-wide text-white sm:inline lg:text-2xl">
+            Best <span className="text-customYellow">Auto</span>
+          </span>
         </a>
 
         {/* Desktop links */}
@@ -382,17 +384,27 @@ export function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="hidden sm:block">
+            <LanguagePicker current={lang} switchHref={switchLocaleHref} size="sm" />
+          </div>
+          <a
+            href="tel:+359877575257"
+            className="hidden sm:flex items-center justify-center h-11 w-11 rounded-full bg-emerald-500 text-white shadow-md transition-all hover:scale-105 hover:bg-emerald-400"
+            aria-label="Call +359 877 575 257"
+          >
+            <PhoneIcon className="h-5 w-5" />
+          </a>
           <a
             href="viber://chat?number=%2B359877575257"
-            className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-purple-400 hover:bg-white/10 transition-all"
+            className="hidden sm:flex items-center justify-center h-11 w-11 rounded-full bg-purple-600 text-white shadow-md transition-all hover:scale-105 hover:bg-purple-500"
             aria-label="Viber"
           >
             <ViberIcon className="h-5 w-5" />
           </a>
           <a
             href="https://t.me/+359877575257"
-            className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full text-gray-400 hover:text-sky-400 hover:bg-white/10 transition-all"
+            className="hidden sm:flex items-center justify-center h-11 w-11 rounded-full bg-sky-500 text-white shadow-md transition-all hover:scale-105 hover:bg-sky-400"
             aria-label="Telegram"
           >
             <TelegramIcon className="h-5 w-5" />
@@ -418,7 +430,7 @@ export function Navbar() {
         backdrop-blur which would make it the containing block for fixed descendants
         and collapse this overlay. */}
     {mobileOpen && (
-      <div className="lg:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-[60] overflow-y-auto">
+      <div className="lg:hidden fixed inset-0 top-20 bg-black/95 backdrop-blur-md z-[60] overflow-y-auto">
           <div className="flex flex-col p-6 gap-1">
             {navLinks.map((link) => (
               <div key={link.label}>
@@ -464,6 +476,9 @@ export function Navbar() {
               </div>
             ))}
             <div className="mt-4 pt-4 border-t border-white/10">
+              <div className="mb-4">
+                <LanguagePicker current={lang} switchHref={switchLocaleHref} size="lg" />
+              </div>
               <a
                 href="tel:+359877575257"
                 className="flex items-center gap-2 text-gray-400 py-2"

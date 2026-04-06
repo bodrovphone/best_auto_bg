@@ -3,20 +3,20 @@ import { PhoneIcon, ViberIcon, TelegramIcon } from "@/components/icons";
 import { auctionLinks } from "@/lib/auctionLinks";
 
 const tx = {
-  description: { bg: "Внос на автомобили директно от американски аукциони. Доставка, мито, ДДС и регистрация — всичко включено.", ru: "Импорт автомобилей напрямую с американских аукционов. Доставка, пошлина, НДС и регистрация — все включено." },
-  navHeader:   { bg: "Навигация",       ru: "Навигация" },
-  auctHeader:  { bg: "Аукциони",        ru: "Аукционы" },
-  contactHeader: { bg: "Контакти",      ru: "Контакты" },
-  howItWorks:  { bg: "Как работи",      ru: "Как это работает" },
-  lots:        { bg: "Последни лотове", ru: "Последние лоты" },
-  calculator:  { bg: "Калкулатор",      ru: "Калькулятор" },
-  reviews:     { bg: "Отзиви",          ru: "Отзывы" },
-  about:       { bg: "За нас",          ru: "О нас" },
+  description: { bg: "Внос на автомобили директно от американски аукциони. Доставка, мито, ДДС и регистрация — всичко включено.", ru: "Импорт автомобилей напрямую с американских аукционов. Доставка, пошлина, НДС и регистрация — все включено.", en: "Car import directly from US auctions. Shipping, customs, VAT, and registration — all included." },
+  navHeader:   { bg: "Навигация",       ru: "Навигация",            en: "Navigation" },
+  auctHeader:  { bg: "Аукциони",        ru: "Аукционы",             en: "Auctions" },
+  contactHeader: { bg: "Контакти",      ru: "Контакты",             en: "Contact" },
+  howItWorks:  { bg: "Как работи",      ru: "Как это работает",     en: "How It Works" },
+  lots:        { bg: "Последни лотове", ru: "Последние лоты",       en: "Latest Lots" },
+  calculator:  { bg: "Калкулатор",      ru: "Калькулятор",          en: "Calculator" },
+  reviews:     { bg: "Отзиви",          ru: "Отзывы",               en: "Reviews" },
+  about:       { bg: "За нас",          ru: "О нас",                en: "About Us" },
 } as const;
 
 type TxKey = keyof typeof tx;
 function t(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 function getNavLinks(lang: string) {

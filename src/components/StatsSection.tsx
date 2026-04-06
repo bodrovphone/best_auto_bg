@@ -3,23 +3,23 @@
 import { useEffect, useRef, useState } from "react";
 
 const tx = {
-  badge:      { bg: "Числата говорят",   ru: "Цифры говорят" },
-  heading1:   { bg: "Резултати, не",     ru: "Результаты, а не" },
-  headingHL:  { bg: "обещания",          ru: "обещания" },
-  subtext:    { bg: "Всяко число стои зад реален автомобил, реален клиент и реално спестяване. Не продаваме мечти — доставяме коли.", ru: "За каждой цифрой стоит реальный автомобиль, реальный клиент и реальная экономия. Мы не продаем мечты — доставляем автомобили." },
-  stat1Label: { bg: "Внесени автомобила", ru: "Импортированных авто" },
-  stat1Sub:   { bg: "от 2020 до днес",    ru: "с 2020 по сегодня" },
-  stat2Label: { bg: "Спестявате средно",  ru: "Средняя экономия" },
-  stat2Sub:   { bg: "спрямо българския пазар", ru: "по сравнению с рынком БГ" },
-  stat3Label: { bg: "Оценка от клиенти", ru: "Оценка клиентов" },
-  stat3Sub:   { bg: "в Google Reviews",   ru: "в Google Reviews" },
-  stat4Label: { bg: "Години опит",        ru: "Лет опыта" },
-  stat4Sub:   { bg: "на американски аукциони", ru: "на американских аукционах" },
+  badge:      { bg: "Числата говорят",   ru: "Цифры говорят",        en: "Numbers Speak" },
+  heading1:   { bg: "Резултати, не",     ru: "Результаты, а не",     en: "Results, not" },
+  headingHL:  { bg: "обещания",          ru: "обещания",             en: "promises" },
+  subtext:    { bg: "Всяко число стои зад реален автомобил, реален клиент и реално спестяване. Не продаваме мечти — доставяме коли.", ru: "За каждой цифрой стоит реальный автомобиль, реальный клиент и реальная экономия. Мы не продаем мечты — доставляем автомобили.", en: "Every number stands for a real car, a real client, and real savings. We don't sell dreams — we deliver cars." },
+  stat1Label: { bg: "Внесени автомобила", ru: "Импортированных авто",  en: "Cars Imported" },
+  stat1Sub:   { bg: "от 2020 до днес",    ru: "с 2020 по сегодня",    en: "from 2020 to today" },
+  stat2Label: { bg: "Спестявате средно",  ru: "Средняя экономия",     en: "Average Savings" },
+  stat2Sub:   { bg: "спрямо българския пазар", ru: "по сравнению с рынком БГ", en: "vs Bulgarian market" },
+  stat3Label: { bg: "Оценка от клиенти", ru: "Оценка клиентов",       en: "Customer Rating" },
+  stat3Sub:   { bg: "в Google Reviews",   ru: "в Google Reviews",     en: "on Google Reviews" },
+  stat4Label: { bg: "Години опит",        ru: "Лет опыта",            en: "Years Experience" },
+  stat4Sub:   { bg: "на американски аукциони", ru: "на американских аукционах", en: "at US auctions" },
 } as const;
 
 type TxKey = keyof typeof tx;
 function t(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {

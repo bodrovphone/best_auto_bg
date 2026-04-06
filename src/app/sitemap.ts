@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://best-auto.bg';
   const defaultLocale = 'bg';
-  const locales = ['bg', 'ru'];
+  const locales = ['bg', 'ru', 'en'];
   const pages = ['', '/about'];
 
   // bg is the default locale → no prefix; other locales get /<locale>

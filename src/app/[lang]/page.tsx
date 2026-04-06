@@ -19,6 +19,10 @@ const meta = {
     title: "Импорт автомобилей из США | Best Auto",
     description: "Импорт авто из США — аукцион, доставка, таможня, НДС и регистрация. Полный сервис от Best Auto.",
   },
+  en: {
+    title: "Car Import from the USA | Best Auto",
+    description: "Import cars from the USA — auction, shipping, customs, VAT, and registration. Full service from Best Auto.",
+  },
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -30,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: m.title,
       description: m.description,
-      locale: lang === "ru" ? "ru_RU" : "bg_BG",
+      locale: lang === "ru" ? "ru_RU" : lang === "en" ? "en_US" : "bg_BG",
       type: "website",
       siteName: "Best Auto",
     },
@@ -40,8 +44,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: m.description,
     },
     alternates: {
-      canonical: `/${lang}`,
-      languages: { bg: "/bg", ru: "/ru" },
+      canonical: lang === "bg" ? "/" : `/${lang}`,
+      languages: { bg: "/", ru: "/ru", en: "/en" },
     },
   };
 }

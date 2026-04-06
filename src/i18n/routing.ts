@@ -1,7 +1,7 @@
 import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
-  locales: ['bg', 'ru'],
+  locales: ['bg', 'ru', 'en'],
   defaultLocale: 'bg',
   // 'as-needed' = default locale (bg) has no URL prefix, others do (e.g. /ru).
   // TODO: verify in prod that /about and other top-level routes still resolve correctly.

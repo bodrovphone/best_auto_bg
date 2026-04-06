@@ -15,102 +15,104 @@ import {
 /* ------------------------------------------------------------------ */
 
 const tx = {
-  badge:        { bg: "Как работи",     ru: "Как это работает" },
-  headingPre:   { bg: "От търсене до",  ru: "От поиска до" },
-  headingHL:    { bg: "вашата врата",    ru: "вашей двери" },
-  subtext:      { bg: "Пет стъпки. Един партньор. Ние се грижим за всичко.", ru: "Пять шагов. Один партнер. Мы позаботимся обо всем." },
+  badge:        { bg: "Как работи",     ru: "Как это работает",  en: "How It Works" },
+  headingPre:   { bg: "От търсене до",  ru: "От поиска до",      en: "From search to" },
+  headingHL:    { bg: "вашата врата",    ru: "вашей двери",       en: "your door" },
+  subtext:      { bg: "Пет стъпки. Един партньор. Ние се грижим за всичко.", ru: "Пять шагов. Один партнер. Мы позаботимся обо всем.", en: "Five steps. One partner. We take care of everything." },
 } as const;
 
 type TxKey = keyof typeof tx;
 function tr(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
 /* ------------------------------------------------------------------ */
 
+type LocaleStr = { bg: string; ru: string; en?: string };
+
 interface Step {
   number: number;
-  title: { bg: string; ru: string };
-  description: { bg: string; ru: string };
-  duration: { bg: string; ru: string };
-  bullets: { bg: string; ru: string }[];
+  title: LocaleStr;
+  description: LocaleStr;
+  duration: LocaleStr;
+  bullets: LocaleStr[];
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   imageSrc?: string;
-  imageAlt: { bg: string; ru: string };
+  imageAlt: LocaleStr;
 }
 
 const steps: Step[] = [
   {
     number: 1,
-    title:       { bg: "Свържете се с нас",   ru: "Свяжитесь с нами" },
-    description: { bg: "Разкажете ни какъв автомобил търсите — марка, модел, бюджет. Консултацията е напълно безплатна.", ru: "Расскажите, какой автомобиль ищете — марка, модель, бюджет. Консультация полностью бесплатна." },
-    duration:    { bg: "Безплатна консултация", ru: "Бесплатная консультация" },
+    title:       { bg: "Свържете се с нас",   ru: "Свяжитесь с нами",          en: "Get in Touch" },
+    description: { bg: "Разкажете ни какъв автомобил търсите — марка, модел, бюджет. Консултацията е напълно безплатна.", ru: "Расскажите, какой автомобиль ищете — марка, модель, бюджет. Консультация полностью бесплатна.", en: "Tell us what car you are looking for — make, model, budget. The consultation is completely free." },
+    duration:    { bg: "Безплатна консултация", ru: "Бесплатная консультация",   en: "Free consultation" },
     bullets: [
-      { bg: "Обсъждаме бюджет и желания",           ru: "Обсуждаем бюджет и пожелания" },
-      { bg: "Показваме примери от текущи аукциони",  ru: "Показываем примеры с текущих аукционов" },
-      { bg: "Договаряме условия без скрити такси",   ru: "Согласовываем условия без скрытых комиссий" },
+      { bg: "Обсъждаме бюджет и желания",           ru: "Обсуждаем бюджет и пожелания",         en: "We discuss budget and preferences" },
+      { bg: "Показваме примери от текущи аукциони",  ru: "Показываем примеры с текущих аукционов", en: "We show examples from current auctions" },
+      { bg: "Договаряме условия без скрити такси",   ru: "Согласовываем условия без скрытых комиссий", en: "We agree on terms with no hidden fees" },
     ],
     icon: PhoneIcon,
     imageSrc: "/assets/images/pexels-pixabay-164634.jpg",
-    imageAlt: { bg: "Свържете се с нас", ru: "Свяжитесь с нами" },
+    imageAlt: { bg: "Свържете се с нас", ru: "Свяжитесь с нами", en: "Get in touch" },
   },
   {
     number: 2,
-    title:       { bg: "Наддаваме и печелим",  ru: "Делаем ставку и выигрываем" },
-    description: { bg: "Участваме в търга от ваше име на Copart, IAAI или Manheim с предварително договорен таван.", ru: "Участвуем в торгах от вашего имени на Copart, IAAI или Manheim с заранее согласованным лимитом." },
-    duration:    { bg: "В деня на търга", ru: "В день торгов" },
+    title:       { bg: "Наддаваме и печелим",  ru: "Делаем ставку и выигрываем", en: "We Bid & Win" },
+    description: { bg: "Участваме в търга от ваше име на Copart, IAAI или Manheim с предварително договорен таван.", ru: "Участвуем в торгах от вашего имени на Copart, IAAI или Manheim с заранее согласованным лимитом.", en: "We participate in the auction on your behalf at Copart, IAAI, or Manheim with a pre-agreed maximum bid." },
+    duration:    { bg: "В деня на търга", ru: "В день торгов", en: "On auction day" },
     bullets: [
-      { bg: "Следим наддаването в реално време",      ru: "Следим за торгами в реальном времени" },
-      { bg: "Работим само с договорен лимит",          ru: "Работаем только в рамках согласованного лимита" },
-      { bg: "Незабавно уведомление при спечелване",    ru: "Мгновенное уведомление при выигрыше" },
+      { bg: "Следим наддаването в реално време",      ru: "Следим за торгами в реальном времени",    en: "We monitor bidding in real time" },
+      { bg: "Работим само с договорен лимит",          ru: "Работаем только в рамках согласованного лимита", en: "We work within the agreed limit only" },
+      { bg: "Незабавно уведомление при спечелване",    ru: "Мгновенное уведомление при выигрыше",    en: "Instant notification when won" },
     ],
     icon: GavelIcon,
     imageSrc: "/assets/images/pexels-shkrabaanthony-7144199.jpg",
-    imageAlt: { bg: "Наддаване и покупка", ru: "Ставка и покупка" },
+    imageAlt: { bg: "Наддаване и покупка", ru: "Ставка и покупка", en: "Bidding and purchase" },
   },
   {
     number: 3,
-    title:       { bg: "Доставка от САЩ",      ru: "Доставка из США" },
-    description: { bg: "Организираме RoRo морски транспорт директно от американското пристанище до Варна или Бургас.", ru: "Организуем морскую перевозку RoRo напрямую из американского порта в Варну или Бургас." },
-    duration:    { bg: "5–7 седмици", ru: "5–7 недель" },
+    title:       { bg: "Доставка от САЩ",      ru: "Доставка из США",           en: "Shipping from the US" },
+    description: { bg: "Организираме RoRo морски транспорт директно от американското пристанище до Варна или Бургас.", ru: "Организуем морскую перевозку RoRo напрямую из американского порта в Варну или Бургас.", en: "We arrange RoRo sea freight directly from the US port to Varna or Burgas." },
+    duration:    { bg: "5–7 седмици", ru: "5–7 недель", en: "5–7 weeks" },
     bullets: [
-      { bg: "RoRo товарен транспорт",               ru: "Грузовая перевозка RoRo" },
-      { bg: "Онлайн проследяване на пратката",      ru: "Онлайн-отслеживание груза" },
-      { bg: "Застраховка по време на транзит",       ru: "Страховка на время транзита" },
+      { bg: "RoRo товарен транспорт",               ru: "Грузовая перевозка RoRo",         en: "RoRo freight transport" },
+      { bg: "Онлайн проследяване на пратката",      ru: "Онлайн-отслеживание груза",        en: "Online shipment tracking" },
+      { bg: "Застраховка по време на транзит",       ru: "Страховка на время транзита",      en: "Insurance during transit" },
     ],
     icon: TruckIcon,
     imageSrc: "/assets/images/shipping2.jpg",
-    imageAlt: { bg: "Доставка от САЩ", ru: "Доставка из США" },
+    imageAlt: { bg: "Доставка от САЩ", ru: "Доставка из США", en: "Shipping from the US" },
   },
   {
     number: 4,
-    title:       { bg: "Митница и регистрация",   ru: "Таможня и регистрация" },
-    description: { bg: "Обработваме цялата митническа документация, заплащаме мито и ДДС, регистрираме в КАТ.", ru: "Оформляем всю таможенную документацию, оплачиваем пошлину и НДС, регистрируем в КАТ." },
-    duration:    { bg: "1–2 седмици", ru: "1–2 недели" },
+    title:       { bg: "Митница и регистрация",   ru: "Таможня и регистрация",     en: "Customs & Registration" },
+    description: { bg: "Обработваме цялата митническа документация, заплащаме мито и ДДС, регистрираме в КАТ.", ru: "Оформляем всю таможенную документацию, оплачиваем пошлину и НДС, регистрируем в КАТ.", en: "We handle all customs documentation, pay duties and VAT, and register the vehicle." },
+    duration:    { bg: "1–2 седмици", ru: "1–2 недели", en: "1–2 weeks" },
     bullets: [
-      { bg: "Мито и ДДС изцяло от ваше име",       ru: "Пошлина и НДС полностью от вашего имени" },
-      { bg: "Пълна митническа документация",        ru: "Полная таможенная документация" },
-      { bg: "Регистрация и табели в КАТ",           ru: "Регистрация и номера в КАТ" },
+      { bg: "Мито и ДДС изцяло от ваше име",       ru: "Пошлина и НДС полностью от вашего имени", en: "Duties and VAT fully on your behalf" },
+      { bg: "Пълна митническа документация",        ru: "Полная таможенная документация",           en: "Complete customs documentation" },
+      { bg: "Регистрация и табели в КАТ",           ru: "Регистрация и номера в КАТ",               en: "Registration and plates" },
     ],
     icon: FileTextIcon,
     imageSrc: "/assets/images/pexels-redyar-rzgar-1257188192-33889800.jpg",
-    imageAlt: { bg: "Митница и регистрация", ru: "Таможня и регистрация" },
+    imageAlt: { bg: "Митница и регистрация", ru: "Таможня и регистрация", en: "Customs and registration" },
   },
   {
     number: 5,
-    title:       { bg: "Колата е ваша!",           ru: "Автомобиль ваш!" },
-    description: { bg: "Доставяме готовия автомобил до вашия адрес в цяла България — с всички документи на ръка.", ru: "Доставляем готовый автомобиль по вашему адресу в любую точку Болгарии — со всеми документами на руках." },
-    duration:    { bg: "Доставка до адрес", ru: "Доставка до адреса" },
+    title:       { bg: "Колата е ваша!",           ru: "Автомобиль ваш!",           en: "The Car is Yours!" },
+    description: { bg: "Доставяме готовия автомобил до вашия адрес в цяла България — с всички документи на ръка.", ru: "Доставляем готовый автомобиль по вашему адресу в любую точку Болгарии — со всеми документами на руках.", en: "We deliver the ready car to your address anywhere in Bulgaria — with all documents in hand." },
+    duration:    { bg: "Доставка до адрес", ru: "Доставка до адреса", en: "Door delivery" },
     bullets: [
-      { bg: "Доставка в цяла България",                      ru: "Доставка по всей Болгарии" },
-      { bg: "Пълен комплект документи",                      ru: "Полный комплект документов" },
-      { bg: "Готов за шофиране от деня на получаване",       ru: "Готов к езде с момента получения" },
+      { bg: "Доставка в цяла България",                      ru: "Доставка по всей Болгарии",          en: "Delivery across Bulgaria" },
+      { bg: "Пълен комплект документи",                      ru: "Полный комплект документов",           en: "Full set of documents" },
+      { bg: "Готов за шофиране от деня на получаване",       ru: "Готов к езде с момента получения",     en: "Ready to drive from day of receipt" },
     ],
     icon: PackageIcon,
     imageSrc: "/assets/images/pexels-gustavo-fring-4895449.jpg",
-    imageAlt: { bg: "Доставка до вас", ru: "Доставка к вам" },
+    imageAlt: { bg: "Доставка до вас", ru: "Доставка к вам", en: "Delivery to you" },
   },
 ];
 
@@ -188,8 +190,8 @@ function findFractionOnPath(path: SVGPathElement, cx: number, cy: number): numbe
 /*  Localized text helper                                              */
 /* ------------------------------------------------------------------ */
 
-function loc(obj: { bg: string; ru: string }, lang: string): string {
-  return obj[lang as "bg" | "ru"] ?? obj.bg;
+function loc(obj: LocaleStr, lang: string): string {
+  return obj[lang as "bg" | "ru" | "en"] ?? obj.bg;
 }
 
 /* ------------------------------------------------------------------ */

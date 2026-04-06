@@ -34,6 +34,8 @@ export default async function LocaleLayout({ children, params }: Props) {
             areaServed: { "@type": "Country", name: "Bulgaria" },
             description: lang === "ru"
               ? "Импорт автомобилей из США в Болгарию. Полный сервис: аукцион, доставка, таможня, регистрация."
+              : lang === "en"
+              ? "Car import from the USA to Bulgaria. Full service: auction, shipping, customs, registration."
               : "Внос на автомобили от САЩ в България. Пълно обслужване: аукцион, доставка, мито, регистрация.",
             serviceType: ["Car Import", "Vehicle Auction Bidding", "Customs Clearance"],
           }),

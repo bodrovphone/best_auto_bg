@@ -2,23 +2,23 @@ import Image from "next/image";
 import { CheckCircleIcon } from "@/components/icons";
 
 const tx = {
-  heroTitle1:    { bg: "ВНОС НА АВТОМОБИЛИ",   ru: "ИМПОРТ АВТОМОБИЛЕЙ" },
-  heroTitle2:    { bg: "ДИРЕКТНО ОТ САЩ, КАНАДА И ЕВРОПА", ru: "НАПРЯМУЮ ИЗ США, КАНАДЫ И ЕВРОПЫ" },
-  heroDesc:      { bg: "Печелим аукцион на Copart, IAAI, ADESA и Manheim и се грижим за всичко останало — доставка, мито, ДДС и регистрация в КАТ.", ru: "Выигрываем аукционы на Copart, IAAI, ADESA и Manheim и берём на себя всё остальное — доставка, таможня, НДС и регистрация." },
-  viewLots:      { bg: "Разгледай лотовете",    ru: "Смотреть лоты" },
-  howWorks:      { bg: "Как работи?",            ru: "Как это работает?" },
-  whyTitle:      { bg: "Защо",                   ru: "Почему" },
-  whySub:        { bg: "Вашият надежден партньор за внос от американски аукциони", ru: "Ваш надежный партнер по импорту с американских аукционов" },
-  ctaBtn:        { bg: "Получете безплатна консултация", ru: "Получите бесплатную консультацию" },
-  benefit1:      { bg: "Директен внос от Copart, IAAI, ADESA и Manheim", ru: "Прямой импорт с Copart, IAAI, ADESA и Manheim" },
-  benefit2:      { bg: "Пълно митническо и ДДС оформяне",               ru: "Полное таможенное оформление и НДС" },
-  benefit3:      { bg: "Доставка от САЩ до вас за 5–6 седмици",         ru: "Доставка из США к вам за 5–6 недель" },
-  benefit4:      { bg: "Над 900 доволни клиенти от цяла България",      ru: "Более 900 довольных клиентов по всей Болгарии" },
+  heroTitle1:    { bg: "ВНОС НА АВТОМОБИЛИ",   ru: "ИМПОРТ АВТОМОБИЛЕЙ",   en: "CAR IMPORT" },
+  heroTitle2:    { bg: "ДИРЕКТНО ОТ САЩ, КАНАДА И ЕВРОПА", ru: "НАПРЯМУЮ ИЗ США, КАНАДЫ И ЕВРОПЫ", en: "DIRECT FROM USA, CANADA & EUROPE" },
+  heroDesc:      { bg: "Печелим аукцион на Copart, IAAI, ADESA и Manheim и се грижим за всичко останало — доставка, мито, ДДС и регистрация в КАТ.", ru: "Выигрываем аукционы на Copart, IAAI, ADESA и Manheim и берём на себя всё остальное — доставка, таможня, НДС и регистрация.", en: "We win auctions at Copart, IAAI, ADESA, and Manheim and handle everything else — shipping, customs, VAT, and registration." },
+  viewLots:      { bg: "Разгледай лотовете",    ru: "Смотреть лоты",         en: "Browse Lots" },
+  howWorks:      { bg: "Как работи?",            ru: "Как это работает?",     en: "How does it work?" },
+  whyTitle:      { bg: "Защо",                   ru: "Почему",                en: "Why" },
+  whySub:        { bg: "Вашият надежден партньор за внос от американски аукциони", ru: "Ваш надежный партнер по импорту с американских аукционов", en: "Your trusted partner for importing from US auctions" },
+  ctaBtn:        { bg: "Получете безплатна консултация", ru: "Получите бесплатную консультацию", en: "Get a free consultation" },
+  benefit1:      { bg: "Директен внос от Copart, IAAI, ADESA и Manheim", ru: "Прямой импорт с Copart, IAAI, ADESA и Manheim", en: "Direct import from Copart, IAAI, ADESA, and Manheim" },
+  benefit2:      { bg: "Пълно митническо и ДДС оформяне",               ru: "Полное таможенное оформление и НДС",           en: "Full customs and VAT processing" },
+  benefit3:      { bg: "Доставка от САЩ до вас за 5–6 седмици",         ru: "Доставка из США к вам за 5–6 недель",          en: "Delivery from USA to you in 5–6 weeks" },
+  benefit4:      { bg: "Над 900 доволни клиенти от цяла България",      ru: "Более 900 довольных клиентов по всей Болгарии", en: "Over 900 satisfied customers across Bulgaria" },
 } as const;
 
 type TxKey = keyof typeof tx;
 function t(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 export function HeroSection({ lang = "bg" }: { lang?: string }) {

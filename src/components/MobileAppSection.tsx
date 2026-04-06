@@ -1,18 +1,18 @@
 import { StarIcon } from "@/components/icons";
 
 const tx = {
-  badge:        { bg: "Отзиви",                               ru: "Отзывы" },
-  heading1:     { bg: "Какво казват",                          ru: "Что говорят" },
-  headingHL:    { bg: "нашите клиенти",                       ru: "наши клиенты" },
-  subtext:      { bg: "Над 900 доволни клиенти, които се довериха на Best Auto за вноса на техния автомобил от САЩ", ru: "Более 900 довольных клиентов, которые доверили Best Auto импорт своего автомобиля из США" },
-  avgRating:    { bg: "Средна оценка",                        ru: "Средняя оценка" },
-  happyClients: { bg: "Доволни клиенти",                      ru: "Довольных клиентов" },
-  transparent:  { bg: "Прозрачен процес",                     ru: "Прозрачный процесс" },
+  badge:        { bg: "Отзиви",                               ru: "Отзывы",                  en: "Reviews" },
+  heading1:     { bg: "Какво казват",                          ru: "Что говорят",              en: "What our" },
+  headingHL:    { bg: "нашите клиенти",                       ru: "наши клиенты",             en: "customers say" },
+  subtext:      { bg: "Над 900 доволни клиенти, които се довериха на Best Auto за вноса на техния автомобил от САЩ", ru: "Более 900 довольных клиентов, которые доверили Best Auto импорт своего автомобиля из США", en: "Over 900 satisfied customers who trusted Best Auto to import their car from the USA" },
+  avgRating:    { bg: "Средна оценка",                        ru: "Средняя оценка",           en: "Average Rating" },
+  happyClients: { bg: "Доволни клиенти",                      ru: "Довольных клиентов",       en: "Happy Clients" },
+  transparent:  { bg: "Прозрачен процес",                     ru: "Прозрачный процесс",       en: "Transparent Process" },
 } as const;
 
 type TxKey = keyof typeof tx;
 function t(key: TxKey, lang: string): string {
-  return tx[key][lang as "bg" | "ru"] ?? tx[key].bg;
+  return tx[key][lang as "bg" | "ru" | "en"] ?? tx[key].bg;
 }
 
 interface Review {
@@ -20,7 +20,7 @@ interface Review {
   location: string;
   car: string;
   rating: number;
-  text: { bg: string; ru: string };
+  text: { bg: string; ru: string; en?: string };
   initials: string;
   color: string;
 }
@@ -101,7 +101,7 @@ const reviews: Review[] = [
 ];
 
 function ReviewCard({ review, lang }: { review: Review; lang: string }) {
-  const text = review.text[lang as "bg" | "ru"] ?? review.text.bg;
+  const text = review.text[lang as "bg" | "ru" | "en"] ?? review.text.bg;
   return (
     <div className="group relative flex flex-col rounded-2xl border border-gray-700/50 bg-gray-900/50 p-6 transition-all duration-300 hover:border-customYellow/30 hover:bg-gray-900/80">
       {/* Quote mark */}

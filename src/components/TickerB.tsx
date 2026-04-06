@@ -2,36 +2,45 @@ type Status = "bid" | "won" | "shipping" | "transit" | "customs" | "registration
 
 const statusConfigByLang: Record<string, Record<Status, { label: string; classes: string }>> = {
   bg: {
-    bid:          { label: "\u2B06 \u041D\u0410\u0414\u0414\u0410\u0412\u0410\u041D\u0415",   classes: "bg-yellow-400/10 text-yellow-300/70" },
-    won:          { label: "\u2605 \u0421\u041F\u0415\u0427\u0415\u041B\u0415\u041D",     classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
-    shipping:     { label: "\u25B8 \u0418\u0417\u041F\u0420\u0410\u0429\u0410\u041D\u0415",    classes: "bg-orange-400/10 text-orange-300/70" },
-    transit:      { label: "\u2708 \u0422\u0420\u0410\u041D\u0417\u0418\u0422",      classes: "bg-sky-400/10 text-sky-300/70" },
-    customs:      { label: "\u2299 \u041C\u0418\u0422\u041D\u0418\u0426\u0410",      classes: "bg-violet-400/10 text-violet-300/70" },
-    registration: { label: "\u2AE1 \u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042F", classes: "bg-blue-400/10 text-blue-300/70" },
-    delivered:    { label: "\u2713 \u0414\u041E\u0421\u0422\u0410\u0412\u0415\u041D",     classes: "bg-emerald-400/10 text-emerald-300/70" },
+    bid:          { label: "⬆ НАДДАВАНЕ",    classes: "bg-yellow-400/10 text-yellow-300/70" },
+    won:          { label: "★ СПЕЧЕЛЕН",      classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
+    shipping:     { label: "▸ ИЗПРАЩАНЕ",     classes: "bg-orange-400/10 text-orange-300/70" },
+    transit:      { label: "✈ ТРАНЗИТ",       classes: "bg-sky-400/10 text-sky-300/70" },
+    customs:      { label: "⊙ МИТНИЦА",       classes: "bg-violet-400/10 text-violet-300/70" },
+    registration: { label: "⫡ РЕГИСТРАЦИЯ",   classes: "bg-blue-400/10 text-blue-300/70" },
+    delivered:    { label: "✓ ДОСТАВЕН",      classes: "bg-emerald-400/10 text-emerald-300/70" },
   },
   ru: {
-    bid:          { label: "\u2B06 \u0421\u0422\u0410\u0412\u041A\u0410",       classes: "bg-yellow-400/10 text-yellow-300/70" },
-    won:          { label: "\u2605 \u0412\u042B\u0418\u0413\u0420\u0410\u041D",     classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
-    shipping:     { label: "\u25B8 \u041E\u0422\u041F\u0420\u0410\u0412\u041A\u0410",    classes: "bg-orange-400/10 text-orange-300/70" },
-    transit:      { label: "\u2708 \u0422\u0420\u0410\u041D\u0417\u0418\u0422",      classes: "bg-sky-400/10 text-sky-300/70" },
-    customs:      { label: "\u2299 \u0422\u0410\u041C\u041E\u0416\u041D\u042F",      classes: "bg-violet-400/10 text-violet-300/70" },
-    registration: { label: "\u2AE1 \u0420\u0415\u0413\u0418\u0421\u0422\u0420\u0410\u0426\u0418\u042F", classes: "bg-blue-400/10 text-blue-300/70" },
-    delivered:    { label: "\u2713 \u0414\u041E\u0421\u0422\u0410\u0412\u041B\u0415\u041D",   classes: "bg-emerald-400/10 text-emerald-300/70" },
+    bid:          { label: "⬆ СТАВКА",        classes: "bg-yellow-400/10 text-yellow-300/70" },
+    won:          { label: "★ ВЫИГРАН",        classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
+    shipping:     { label: "▸ ОТПРАВКА",       classes: "bg-orange-400/10 text-orange-300/70" },
+    transit:      { label: "✈ ТРАНЗИТ",        classes: "bg-sky-400/10 text-sky-300/70" },
+    customs:      { label: "⊙ ТАМОЖНЯ",        classes: "bg-violet-400/10 text-violet-300/70" },
+    registration: { label: "⫡ РЕГИСТРАЦИЯ",    classes: "bg-blue-400/10 text-blue-300/70" },
+    delivered:    { label: "✓ ДОСТАВЛЕН",      classes: "bg-emerald-400/10 text-emerald-300/70" },
+  },
+  en: {
+    bid:          { label: "⬆ BIDDING",        classes: "bg-yellow-400/10 text-yellow-300/70" },
+    won:          { label: "★ WON",             classes: "bg-[#ED7014]/10 text-[#ED7014]/80" },
+    shipping:     { label: "▸ SHIPPING",        classes: "bg-orange-400/10 text-orange-300/70" },
+    transit:      { label: "✈ TRANSIT",         classes: "bg-sky-400/10 text-sky-300/70" },
+    customs:      { label: "⊙ CUSTOMS",         classes: "bg-violet-400/10 text-violet-300/70" },
+    registration: { label: "⫡ REGISTRATION",    classes: "bg-blue-400/10 text-blue-300/70" },
+    delivered:    { label: "✓ DELIVERED",       classes: "bg-emerald-400/10 text-emerald-300/70" },
   },
 };
 
 const headerTx = {
-  status:   { bg: "\u0421\u0442\u0430\u0442\u0443\u0441",     ru: "\u0421\u0442\u0430\u0442\u0443\u0441" },
-  vehicle:  { bg: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B",  ru: "\u0410\u0432\u0442\u043E\u043C\u043E\u0431\u0438\u043B\u044C" },
-  route:    { bg: "\u041C\u0430\u0440\u0448\u0440\u0443\u0442",    ru: "\u041C\u0430\u0440\u0448\u0440\u0443\u0442" },
-  priceBG:  { bg: "\u0426\u0435\u043D\u0430 \u0432 \u0411\u0413",  ru: "\u0426\u0435\u043D\u0430 \u0432 \u0411\u0413" },
-  saved:    { bg: "\u0421\u043F\u0435\u0441\u0442\u0435\u043D\u043E",    ru: "\u042D\u043A\u043E\u043D\u043E\u043C\u0438\u044F" },
+  status:   { bg: "Статус",      ru: "Статус",     en: "Status" },
+  vehicle:  { bg: "Автомобил",   ru: "Автомобиль", en: "Vehicle" },
+  route:    { bg: "Маршрут",     ru: "Маршрут",    en: "Route" },
+  priceBG:  { bg: "Цена в БГ",   ru: "Цена в БГ",  en: "Price in BG" },
+  saved:    { bg: "Спестено",    ru: "Экономия",   en: "Saved" },
 } as const;
 
 type HKey = keyof typeof headerTx;
 function th(key: HKey, lang: string): string {
-  return headerTx[key][lang as "bg" | "ru"] ?? headerTx[key].bg;
+  return headerTx[key][lang as "bg" | "ru" | "en"] ?? headerTx[key].bg;
 }
 
 const entries: {
