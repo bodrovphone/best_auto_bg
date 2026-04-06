@@ -3,6 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, usePathname } from "next/navigation";
 import Image from "next/image";
+import BG from "country-flag-icons/react/3x2/BG";
+import RU from "country-flag-icons/react/3x2/RU";
+import GB from "country-flag-icons/react/3x2/GB";
 import {
   PhoneIcon,
   MenuIcon,
@@ -154,51 +157,92 @@ function DesktopDropdown({
   );
 }
 
+const LANGS = [
+  { code: "bg", label: "Български", Flag: BG },
+  { code: "ru", label: "Русский",   Flag: RU },
+  { code: "en", label: "English",   Flag: GB },
+] as const;
+
+function FlagIcon({ code, className }: { code: string; className?: string }) {
+  const found = LANGS.find((l) => l.code === code);
+  if (!found) return null;
+  const { Flag } = found;
+  return <Flag className={className ?? "h-4 w-auto rounded-[2px]"} />;
+}
+
 function LanguagePicker({
   current,
   switchHref,
-  size = "sm",
 }: {
   current: string;
   switchHref: (code: string) => string;
-  size?: "sm" | "lg";
 }) {
-  const langs = [
-    { code: "bg", short: "БГ", full: "Български" },
-    { code: "ru", short: "РУ", full: "Русский" },
-    { code: "en", short: "EN", full: "English" },
-  ];
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [open]);
+
   const setCookieAndGo = (code: string) => {
     document.cookie = `preferred-language=${code}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
   };
-  const sizeCls =
-    size === "lg"
-      ? "h-11 px-4 text-sm"
-      : "h-9 px-3 text-xs";
+
+  const currentLang = LANGS.find((l) => l.code === current) ?? LANGS[0];
+
   return (
-    <div
-      className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1"
-      role="group"
-      aria-label="Language"
-    >
-      {langs.map((l) => {
-        const active = current === l.code;
-        return (
-          <a
-            key={l.code}
-            href={switchHref(l.code)}
-            onClick={() => setCookieAndGo(l.code)}
-            aria-current={active ? "true" : undefined}
-            className={`inline-flex items-center justify-center rounded-full font-semibold transition-colors ${sizeCls} ${
-              active
-                ? "bg-customYellow text-black"
-                : "text-gray-300 hover:bg-white/10 hover:text-white"
-            }`}
-          >
-            {size === "lg" ? l.full : l.short}
-          </a>
-        );
-      })}
+    <div ref={ref} className="relative">
+      {/* Trigger button */}
+      <button
+        onClick={() => setOpen((v) => !v)}
+        className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-xs font-semibold text-gray-300 transition-colors hover:border-white/20 hover:bg-white/10 hover:text-white"
+        aria-label="Select language"
+        aria-expanded={open}
+      >
+        <FlagIcon code={current} className="h-3.5 w-auto rounded-[2px]" />
+        <span className="uppercase tracking-wide">{current.toUpperCase()}</span>
+        <ChevronDownIcon
+          className={`h-3 w-3 transition-transform duration-150 ${open ? "rotate-180" : ""}`}
+        />
+      </button>
+
+      {/* Dropdown */}
+      {open && (
+        <div className="absolute right-0 top-full mt-1.5 z-[70] min-w-[140px] rounded-xl border border-white/10 bg-gray-900/98 shadow-2xl backdrop-blur-xl overflow-hidden">
+          {LANGS.map((l) => {
+            const active = current === l.code;
+            return (
+              <a
+                key={l.code}
+                href={switchHref(l.code)}
+                onClick={() => {
+                  setCookieAndGo(l.code);
+                  setOpen(false);
+                }}
+                className={`flex items-center gap-2.5 px-3 py-2.5 text-sm transition-colors ${
+                  active
+                    ? "bg-customYellow/10 text-customYellow font-semibold"
+                    : "text-gray-300 hover:bg-white/5 hover:text-white"
+                }`}
+              >
+                <l.Flag className="h-4 w-auto flex-shrink-0 rounded-[2px]" />
+                <span>{l.label}</span>
+                {active && (
+                  <span className="ml-auto h-1.5 w-1.5 rounded-full bg-customYellow" />
+                )}
+              </a>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 }
@@ -384,10 +428,9 @@ export function Navbar() {
         </div>
 
         {/* Right side */}
-        <div className="flex items-center gap-2 sm:gap-3">
-          <div className="hidden sm:block">
-            <LanguagePicker current={lang} switchHref={switchLocaleHref} size="sm" />
-          </div>
+        <div className="flex items-center gap-2">
+          {/* Language picker — visible on all screen sizes */}
+          <LanguagePicker current={lang} switchHref={switchLocaleHref} />
           <a
             href="tel:+359877575257"
             className="hidden sm:flex items-center justify-center h-11 w-11 rounded-full bg-emerald-500 text-white shadow-md transition-all hover:scale-105 hover:bg-emerald-400"
@@ -476,9 +519,6 @@ export function Navbar() {
               </div>
             ))}
             <div className="mt-4 pt-4 border-t border-white/10">
-              <div className="mb-4">
-                <LanguagePicker current={lang} switchHref={switchLocaleHref} size="lg" />
-              </div>
               <a
                 href="tel:+359877575257"
                 className="flex items-center gap-2 text-gray-400 py-2"
