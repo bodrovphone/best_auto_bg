@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import Image from "next/image";
 import {
   PhoneIcon,
@@ -229,9 +229,18 @@ function MobileDropdown({
 
 export function Navbar() {
   const params = useParams();
+  const pathname = usePathname() ?? "/";
   const lang = (params?.lang as string) ?? "bg";
   const prefix = lang === "bg" ? "" : `/${lang}`;
   const navLinks = getNavLinks(lang);
+
+  // Build the equivalent URL on the other locale, preserving the current path.
+  // bg is the default → no prefix; ru → /ru prefix.
+  const switchLocaleHref = (target: string) => {
+    // Strip any leading locale segment from current pathname
+    const stripped = pathname.replace(/^\/(bg|ru)(?=\/|$)/, "") || "/";
+    return target === "bg" ? stripped : `/${target}${stripped === "/" ? "" : stripped}`;
+  };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
@@ -293,7 +302,7 @@ export function Navbar() {
                   ].map((l) => (
                     <a
                       key={l.code}
-                      href={l.code === "bg" ? "/" : `/${l.code}`}
+                      href={switchLocaleHref(l.code)}
                       className={`block px-4 py-2 text-xs transition-colors ${lang === l.code ? "text-[#ED7014] bg-white/5" : "text-gray-300 hover:text-white hover:bg-white/5"}`}
                     >
                       {l.label}
