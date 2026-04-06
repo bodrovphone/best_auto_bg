@@ -1,34 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Best Auto icon">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Best Auto icon">
   <defs>
-    <style>
-      .accent { fill: #D4512A; }
-    </style>
+    <filter id="carGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.5" result="blur"/>
+      <feFlood flood-color="#ffffff" flood-opacity="0.18" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="borderGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#C41E3A" flood-opacity="0.25" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="redGlow"/>
+      <feMerge>
+        <feMergeNode in="redGlow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="borderGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#D4243F"/>
+      <stop offset="40%" stop-color="#8B0000"/>
+      <stop offset="60%" stop-color="#8B0000"/>
+      <stop offset="100%" stop-color="#D4243F"/>
+    </linearGradient>
+    <linearGradient id="carShine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#e0e0e0"/>
+      <stop offset="100%" stop-color="#b0b0b0"/>
+    </linearGradient>
   </defs>
 
-  <!-- Car body -->
-  <path class="accent" d="M10 26 L15 14 Q16 12 18 12 L34 12 Q36 12 37 14 L42 26 L44 26 Q46 26 46 28 L46 35 Q46 37 44 37 L42 37 L42 35 L10 35 L10 37 L8 37 Q6 37 6 35 L6 28 Q6 26 8 26 Z" />
+  <!-- Thick circular border with glow -->
+  <circle cx="100" cy="100" r="93" fill="none" stroke="url(#borderGrad)" stroke-width="6" filter="url(#borderGlow)"/>
+  <!-- Inner accent ring -->
+  <circle cx="100" cy="100" r="87" fill="none" stroke="#C41E3A" stroke-width="0.5" opacity="0.25"/>
 
-  <!-- Windshield cutouts -->
-  <path fill="#1a1a2e" d="M17 15 L21 15 L19 24 L13.5 24 Z" opacity="0.5" />
-  <path fill="#1a1a2e" d="M23 15 L35 15 L38.5 24 L20.5 24 Z" opacity="0.5" />
+  <!-- Aggressive supercar silhouette - simplified for small sizes -->
+  <g transform="translate(100, 100)" filter="url(#carGlow)">
+    <!-- Speed lines -->
+    <line x1="-70" y1="-3" x2="-48" y2="-3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.28"/>
+    <line x1="-74" y1="4" x2="-45" y2="4" stroke="#fff" stroke-width="1.2" stroke-linecap="round" opacity="0.2"/>
+    <line x1="-68" y1="11" x2="-44" y2="11" stroke="#fff" stroke-width="0.9" stroke-linecap="round" opacity="0.14"/>
+    <line x1="-65" y1="-9" x2="-50" y2="-9" stroke="#fff" stroke-width="0.8" stroke-linecap="round" opacity="0.12"/>
 
-  <!-- Wheels -->
-  <circle cx="17" cy="37" r="5" fill="#1a1a2e" />
-  <circle cx="17" cy="37" r="3" class="accent" opacity="0.5" />
-  <circle cx="17" cy="37" r="1.2" fill="#1a1a2e" />
+    <!-- Main car body - aggressive supercar, simplified -->
+    <path d="
+      M-40 18 L-36 8 L-32 0 L-26 -8
+      L-18 -16 L-8 -20 L4 -22
+      L16 -22 L26 -20 L34 -16
+      L40 -10 L44 -2 L48 6 L48 12
+      L48 16 L46 18
+      L38 18
+      Q36 12 32 10 Q26 8 22 11 Q20 13 19 18
+      L-10 18
+      Q-12 12 -16 10 Q-22 8 -26 11 Q-28 14 -30 18 Z
+    " fill="url(#carShine)"/>
 
-  <circle cx="35" cy="37" r="5" fill="#1a1a2e" />
-  <circle cx="35" cy="37" r="3" class="accent" opacity="0.5" />
-  <circle cx="35" cy="37" r="1.2" fill="#1a1a2e" />
+    <!-- Rear spoiler -->
+    <path d="M-38 0 L-44 -6 L-42 -8 L-36 -6 L-34 -2" fill="#e0e0e0" stroke="#fff" stroke-width="0.4" opacity="0.85"/>
 
-  <!-- Headlight -->
-  <rect x="42" y="28" width="3" height="2.5" rx="0.8" fill="#FFFFFF" opacity="0.9" />
+    <!-- Roof line highlight -->
+    <path d="M-18 -16 L-8 -20 L4 -22 L16 -22 L26 -20 L34 -16 L40 -10" fill="none" stroke="#fff" stroke-width="0.9" opacity="0.5"/>
 
-  <!-- Taillight -->
-  <rect x="7" y="28" width="2.5" height="2.5" rx="0.8" fill="#FF4444" opacity="0.7" />
+    <!-- Windshield -->
+    <path d="
+      M-14 -14 L2 -21 Q8 -22 14 -21.5 L24 -19
+      Q32 -16 36 -12 L38 -8
+      L-16 -8 Z
+    " fill="#111318" opacity="0.6"/>
 
-  <!-- Speed lines -->
-  <line x1="1" y1="22" x2="7" y2="22" stroke="#D4512A" stroke-width="1.2" stroke-linecap="round" opacity="0.4" />
-  <line x1="-1" y1="26" x2="6" y2="26" stroke="#D4512A" stroke-width="1.2" stroke-linecap="round" opacity="0.3" />
-  <line x1="1" y1="30" x2="6" y2="30" stroke="#D4512A" stroke-width="1.2" stroke-linecap="round" opacity="0.2" />
+    <!-- Windshield frame -->
+    <path d="M-14 -14 L2 -21 Q8 -22 14 -21.5 L24 -19 Q32 -16 36 -12" fill="none" stroke="#fff" stroke-width="0.4" opacity="0.3"/>
+
+    <!-- Rear wheel -->
+    <circle cx="-20" cy="18" r="10" fill="#0a0a0a"/>
+    <circle cx="-20" cy="18" r="7" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="0.5"/>
+    <circle cx="-20" cy="18" r="3" fill="#0e0e0e" stroke="#444" stroke-width="0.5"/>
+
+    <!-- Front wheel -->
+    <circle cx="28" cy="18" r="10" fill="#0a0a0a"/>
+    <circle cx="28" cy="18" r="7" fill="#1a1a1a" stroke="#3a3a3a" stroke-width="0.5"/>
+    <circle cx="28" cy="18" r="3" fill="#0e0e0e" stroke="#444" stroke-width="0.5"/>
+
+    <!-- Headlight -->
+    <path d="M45 2 L49 4 L49 8 L46 6 Z" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Taillights -->
+    <path d="M-38 2 L-34 0 L-34 8 L-38 10 Z" fill="#C41E3A" opacity="0.85"/>
+
+    <!-- Body crease -->
+    <path d="M-34 4 Q-6 -2 14 -2 Q38 -2 46 4" fill="none" stroke="#fff" stroke-width="0.4" opacity="0.18"/>
+  </g>
 </svg>
