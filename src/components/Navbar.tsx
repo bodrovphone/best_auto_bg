@@ -12,12 +12,15 @@ import {
   TelegramIcon,
   ChevronDownIcon,
 } from "@/components/icons";
+import { auctionLinks } from "@/lib/auctionLinks";
 
 interface DropdownItem {
   label: string;
   href: string;
   muted?: boolean;
   image?: string;
+  dark?: boolean;
+  invert?: boolean;
 }
 
 interface DropdownGroup {
@@ -57,14 +60,7 @@ function getNavLinks(lang: string): NavLink[] {
       label: tr("auctions", lang),
       href: "#",
       dropdown: [
-        {
-          items: [
-            { label: "Copart", href: "https://www.copart.com", image: "/assets/images/copart_logo.jpg" },
-            { label: "IAAI", href: "https://www.iaai.com", image: "/assets/images/iaai_logo.jpg" },
-            { label: "Manheim", href: "https://www.manheim.com", image: "/assets/images/manheim_logo.jpg" },
-            { label: "AutoBidMaster", href: "https://www.autobidmaster.com", image: "/images/icons/abm-logo-white.89480f31.svg" },
-          ],
-        },
+        { items: auctionLinks },
       ],
     },
     { label: tr("calculator", lang), href: "#calculator" },
@@ -92,11 +88,11 @@ function DesktopDropdown({
     >
       <div
         className={`rounded-xl border border-white/10 bg-gray-900/95 backdrop-blur-xl shadow-2xl overflow-hidden ${
-          hasImages ? "min-w-[320px] p-4" : "min-w-[260px]"
+          hasImages ? "min-w-[260px] p-3" : "min-w-[260px]"
         }`}
       >
         {hasImages ? (
-          <div className="grid grid-cols-2 gap-2.5">
+          <div className="flex flex-col gap-2">
             {groups.flatMap((g) => g.items).map((item) => {
               const isExternal = item.href.startsWith("http");
               return (
@@ -104,15 +100,20 @@ function DesktopDropdown({
                   key={item.label}
                   href={item.href}
                   {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="group flex items-center justify-center rounded-lg border border-white/5 bg-white/5 p-3 transition-all hover:border-customYellow/30 hover:bg-white/10"
+                  className={
+                    item.dark
+                      ? "group flex h-12 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] px-4 transition-all hover:border-white/20 hover:bg-white/[0.06]"
+                      : "group flex h-12 items-center justify-center overflow-hidden rounded-lg bg-white/90 px-4 transition-all hover:bg-white"
+                  }
                 >
                   {item.image ? (
                     <Image
                       src={item.image}
                       alt={item.label}
-                      width={120}
+                      width={130}
                       height={40}
-                      className="h-8 w-auto object-contain brightness-110 opacity-70 group-hover:opacity-100 transition-opacity"
+                      className="h-7 w-auto max-w-[130px] object-contain transition-transform duration-200 group-hover:scale-105"
+                      style={item.invert ? { filter: "brightness(0) invert(1)" } : undefined}
                     />
                   ) : (
                     <span className="text-sm font-semibold text-gray-300 group-hover:text-white transition-colors">
@@ -169,7 +170,7 @@ function MobileDropdown({
   return (
     <div className="ml-4 mt-2 mb-1 pl-2">
       {hasImages ? (
-        <div className="grid grid-cols-2 gap-2">
+        <div className="flex flex-col gap-2">
           {groups.flatMap((g) => g.items).map((item) => {
             const isExternal = item.href.startsWith("http");
             return (
@@ -177,15 +178,20 @@ function MobileDropdown({
                 key={item.label}
                 href={item.href}
                 {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-3 transition-all hover:bg-white/10"
+                className={
+                  item.dark
+                    ? "flex h-12 items-center justify-center overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] px-4"
+                    : "flex h-12 items-center justify-center overflow-hidden rounded-lg bg-white/90 px-4"
+                }
               >
                 {item.image ? (
                   <Image
                     src={item.image}
                     alt={item.label}
-                    width={100}
-                    height={32}
-                    className="h-7 w-auto object-contain brightness-110 opacity-80"
+                    width={130}
+                    height={40}
+                    className="h-7 w-auto max-w-[130px] object-contain"
+                    style={item.invert ? { filter: "brightness(0) invert(1)" } : undefined}
                   />
                 ) : (
                   <span className="text-sm font-medium text-gray-300">

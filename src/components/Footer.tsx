@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { PhoneIcon, ViberIcon, TelegramIcon } from "@/components/icons";
+import { auctionLinks } from "@/lib/auctionLinks";
 
 const tx = {
   description: { bg: "Внос на автомобили директно от американски аукциони. Доставка, мито, ДДС и регистрация — всичко включено.", ru: "Импорт автомобилей напрямую с американских аукционов. Доставка, пошлина, НДС и регистрация — все включено." },
@@ -27,13 +28,6 @@ function getNavLinks(lang: string) {
     { label: t("about", lang),      href: "/about" },
   ];
 }
-
-const auctionLinks: { label: string; href: string; image: string; dark?: boolean; invert?: boolean }[] = [
-  { label: "Copart", href: "https://www.copart.com", image: "/images/new_logo_copart.svg", dark: true },
-  { label: "IAAI", href: "https://www.iaai.com", image: "/images/new_logo_iaai.svg", dark: true },
-  { label: "Manheim", href: "https://www.manheim.com", image: "/images/new-logo-manheim.svg", dark: true, invert: true },
-  { label: "AutoBidMaster", href: "https://www.autobidmaster.com", image: "/images/new-logo-bid.svg", dark: true },
-];
 
 export function Footer({ lang = "bg" }: { lang?: string }) {
   const prefix = lang === "bg" ? "" : `/${lang}`;
