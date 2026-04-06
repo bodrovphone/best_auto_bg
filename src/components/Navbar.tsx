@@ -272,6 +272,7 @@ export function Navbar() {
   };
 
   return (
+    <>
     <nav className="fixed top-0 left-0 w-full z-50 bg-black/90 backdrop-blur-md shadow-lg">
       {/* Top info bar - hidden on mobile */}
       <div className="hidden lg:block border-b border-white/10">
@@ -405,9 +406,13 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
-      {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-40 overflow-y-auto">
+    </nav>
+
+    {/* Mobile menu overlay — sibling of <nav>, NOT a child, because the nav has
+        backdrop-blur which would make it the containing block for fixed descendants
+        and collapse this overlay. */}
+    {mobileOpen && (
+      <div className="lg:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-md z-[60] overflow-y-auto">
           <div className="flex flex-col p-6 gap-1">
             {navLinks.map((link) => (
               <div key={link.label}>
@@ -480,6 +485,6 @@ export function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }
