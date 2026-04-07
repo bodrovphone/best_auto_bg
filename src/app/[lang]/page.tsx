@@ -5,6 +5,7 @@ import { OffersSection } from "@/components/OffersSection";
 import { TestimonialsSection } from "@/components/MobileAppSection";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { HowItWorks } from "@/components/HowItWorks";
+import { HeroWhyCard } from "@/components/HeroWhyCard";
 import { ImportCalculator } from "@/components/ImportCalculator";
 import { StatsSection } from "@/components/StatsSection";
 
@@ -58,6 +59,9 @@ export default async function HomePage({ params }: Props) {
       <TickerB lang={lang} />
       <div className="separator h-[1px] w-full" />
       <HowItWorks lang={lang} />
+      <div className="md:hidden px-4 py-8 flex justify-center">
+        <HeroWhyCard lang={lang} />
+      </div>
       <div className="separator h-[1px] w-full" />
       <OffersSection lang={lang} />
       <div className="separator h-[1px] w-full" />

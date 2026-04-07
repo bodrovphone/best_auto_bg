@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CheckCircleIcon } from "@/components/icons";
+import { HeroWhyCard } from "@/components/HeroWhyCard";
 
 const tx = {
   heroTitle1:    { bg: "ВНОС НА АВТОМОБИЛИ",   ru: "ИМПОРТ АВТОМОБИЛЕЙ",   en: "CAR IMPORT" },
@@ -30,10 +30,10 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
   ];
 
   return (
-    <section className="relative min-h-[736px] w-full overflow-hidden bg-black">
+    <section className="relative min-h-[480px] md:min-h-[736px] w-full overflow-hidden bg-black">
       {/* Background image */}
       <Image
-        src="/assets/images/flag.jpg"
+        src="/images/new_hero_image.jpg"
         alt=""
         fill
         priority
@@ -45,7 +45,7 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[736px] max-w-7xl items-center px-4 pt-32 pb-12 lg:pt-32">
+      <div className="relative z-10 mx-auto flex min-h-[480px] md:min-h-[736px] max-w-7xl items-center px-4 pt-32 pb-12 lg:pt-32">
         <div className="grid w-full gap-10 lg:grid-cols-2 lg:gap-16">
 
           {/* Left column */}
@@ -79,34 +79,9 @@ export function HeroSection({ lang = "bg" }: { lang?: string }) {
             </div>
           </div>
 
-          {/* Right column — Why Best Auto panel */}
-          <div className="flex items-center lg:justify-end">
-            <div className="w-full max-w-md rounded-2xl border border-white/10 bg-black/40 p-7 backdrop-blur-md">
-              <h2 className="text-xl font-bold text-white">
-                {t("whyTitle", lang)}{" "}
-                <span className="text-[#ED7014]">Best Auto?</span>
-              </h2>
-              <p className="mt-1 text-sm text-gray-400">
-                {t("whySub", lang)}
-              </p>
-
-              <ul className="mt-6 flex flex-col gap-4">
-                {benefits.map((b) => (
-                  <li key={b} className="flex items-start gap-3">
-                    <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#ED7014]" />
-                    <span className="text-sm text-gray-200">{b}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href="viber://chat?number=%2B359877575257"
-                className="mt-7 flex w-full items-center justify-center rounded-xl bg-[#ED7014] px-6 py-3 font-semibold text-black transition-opacity hover:opacity-90"
-              >
-                {t("ctaBtn", lang)}
-              </a>
-
-            </div>
+          {/* Right column — Why Best Auto panel (desktop only) */}
+          <div className="hidden md:flex items-center lg:justify-end">
+            <HeroWhyCard lang={lang} />
           </div>
 
         </div>
