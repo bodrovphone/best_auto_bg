@@ -63,7 +63,7 @@ function getNavLinks(lang: string): NavLink[] {
         { items: auctionLinks },
       ],
     },
-    { label: tr("calculator", lang), href: "#calculator" },
+    // { label: tr("calculator", lang), href: "#calculator" },
     { label: tr("reviews", lang), href: "#testimonials" },
     { label: tr("about", lang), href: "/about" },
   ];
