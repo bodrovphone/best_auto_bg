@@ -6,7 +6,7 @@ import { TestimonialsSection } from "@/components/MobileAppSection";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
 import { HowItWorks } from "@/components/HowItWorks";
 import { HeroWhyCard } from "@/components/HeroWhyCard";
-import { ImportCalculator } from "@/components/ImportCalculator";
+// import { ImportCalculator } from "@/components/ImportCalculator";
 import { StatsSection } from "@/components/StatsSection";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -69,8 +69,8 @@ export default async function HomePage({ params }: Props) {
       <div className="separator h-[1px] w-full" />
       <WhyChooseUs lang={lang} />
       <div className="separator h-[1px] w-full" />
-      <ImportCalculator lang={lang} />
-      <div className="separator h-[1px] w-full" />
+      {/* <ImportCalculator lang={lang} />
+      <div className="separator h-[1px] w-full" /> */}
       <StatsSection lang={lang} />
       <div className="separator h-[1px] w-full" />
     </div>

@@ -23,7 +23,7 @@ function getNavLinks(lang: string) {
   return [
     { label: t("howItWorks", lang), href: "#how-it-works" },
     { label: t("lots", lang),       href: "#offers" },
-    { label: t("calculator", lang), href: "#calculator" },
+    // { label: t("calculator", lang), href: "#calculator" },
     { label: t("reviews", lang),    href: "#testimonials" },
     { label: t("about", lang),      href: "/about" },
   ];
